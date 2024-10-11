@@ -33,29 +33,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // 存在場合
         echo "ユーザー名存在します";
     } else {
-        // Sinh token cho người dùng mới
+        // token 発生
         $token = generateToken();
 
-        // INSERT vào bảng userlist
+        // INSERT 
         $sql = "INSERT INTO user (username, password, email, token) VALUES (?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ssss", $username, $password, $email, $token);
 
         if ($stmt->execute()) {
-            // Hiển thị thông báo đăng ký thành công
             echo "登録成功 <br>";
             // echo "userID: " . $user_id . "<br>";
             // echo "Username: " . $username . "<br>";
             // echo "email: " . $family_id . "<br>";
         } else {
-            // Lỗi khi insert
             echo "insert ERROR";
         }
     }
     $stmt->close();
     $conn->close();
 } else {
-    // Phương thức không phải POST
+    // POST ではない
     echo "registerphp 59 LLLLLLL";
 }
 
