@@ -50,7 +50,7 @@
         justify-content: center; /* Canh giữa ảnh theo chiều ngang */
         align-items: center; /* Canh giữa ảnh theo chiều dọc */
         transition: 0.3s; /* Hiệu ứng chuyển đổi mượt */
-
+        margin-bottom: 10px;
     }
 
     /* .register-form button:hover {
