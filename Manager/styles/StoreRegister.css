@@ -1,0 +1,54 @@
+@media only screen and (max-width: 767px) {
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background: linear-gradient(135deg, #618264, #d0e7d2);
+        background-size: 400% 400%;
+        animation: wave 10s ease infinite;
+    }
+
+    @keyframes wave {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    .register-form {
+        padding: 20px;
+        border-radius: 8px;
+        width: 300px;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+    .register-form h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    .register-form label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    .register-form input {
+        font-weight: bold;
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+    .register-form button {
+        font-weight: bold;
+        width: 100%;
+        padding: 10px;
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .register-form button:hover {
+        background-color: #2980b9;
+    }
+}
