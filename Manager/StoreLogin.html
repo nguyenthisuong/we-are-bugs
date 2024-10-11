@@ -4,29 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/StoreRegister.css">
     <title>ログイン</title>
 </head>
 
 <body>
-    <div class="login">
-        <h1>Login</h1>
+    <div class="register-form">
+        <h2>Login</h2>
 
         <div class="login-info">
             <div class="login-mail">
-                <h3>メール</h3>
                 <input type="text" id="mail" name="mail" placeholder="メールを入力">
             </div>
             <div class="login-password">
-                <h3>パスワード</h3>
                 <input type="text" id="password" name="passowrd" placeholder="パスワードを入力">
             </div>
         </div>
 
         <div class="login-button">
-            <button>ログイン</button>
+            <button type="submit">
+                ログイン
+            </button>
         </div>
+
         <div class="register-button">
-            <button>アカウント作成</button>
+            <button type="submit">
+                <a href="./StoreRegister.html">アカウント作成</a>
+            </button>
         </div>
     </div>
 </body>
