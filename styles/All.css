@@ -1,0 +1,179 @@
+
+.menu-toggle {
+    display: none;
+}
+
+/* CSS cho điện thoại */
+@media only screen and (max-width: 767px) {
+
+    .search1 {
+        /* Tô màu viền */
+        border: 2px solid #007bff; /* Màu viền là màu xanh dương */
+        border-radius: 5px; /* Để viền cong */
+        padding: 5px; /* Thêm padding để ô tìm kiếm trông đẹp hơn */
+        /* Kiểm soát việc zoom */
+        touch-action: manipulation; /* Ngăn chặn trượt mượt và các tác động khác */
+        -ms-touch-action: manipulation; /* Cho trình duyệt Internet Explorer/Edge */
+        -webkit-user-select: none; /* Ngăn chặn việc chọn văn bản bên trong ô tìm kiếm */
+        -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Ngăn chặn hiệu ứng tap mặc định */
+    }
+    /* Ẩn thanh nav mặc định trên điện thoại */
+    .nav-menu {
+        display: none;  
+    }
+    /* Hiển thị thanh nav khi được kích hoạt */
+    .menu-toggle.active + .nav-menu {
+        display: block;
+    }
+    /* Giao diện dấu 3 gạch */
+    .menu-toggle {
+        display: block;
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0;
+        width: 100%;
+        height: 40px;
+        justify-content: right;
+    }
+
+    .menu-icon {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        position: relative;
+    }
+
+    .menu-icon::before,
+    .menu-icon::after {
+        content: '';
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        position: absolute;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .menu-icon::before {
+        top: -8px;
+    }
+
+    .menu-icon::after {
+        top: 8px;
+    }
+
+    /* Khi nút được nhấp vào, hiển thị menu */
+    .menu-toggle.active .menu-icon {
+        background-color: transparent;
+    }
+
+    .menu-toggle.active .menu-icon::before {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu-toggle.active .menu-icon::after {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /*  */
+
+    .search-container input {
+        width: 100%;
+        height: 1.3cm;
+        padding: 10px;
+        margin: 0px, 5px, 0px, 5px;
+        border-radius: 10px;
+        border: 0.1px solid #bec2c6; /* Màu viền là màu xanh dương */
+      }
+
+    /* CSS cho các mục trong thanh nav */
+    .nav-menu ul {
+        list-style: none;
+    }
+
+    .nav-menu ul li {
+        margin-bottom: 0; /* Loại bỏ margin dưới */
+    }
+    
+    .nav-menu ul li:last-child a {
+        border-bottom: none; /* Loại bỏ gạch chân của phần tử cuối cùng */
+    }
+    
+    .nav-menu ul li a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        padding: 15px 15px;
+        display: flex; /* Sử dụng flexbox để căn chỉnh văn bản giữa */
+        justify-content: left; /* Căn giữa theo chiều ngang */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        transition: background-color 0.3s ease;
+        border-bottom: solid rgb(165, 165, 173) 1px;
+    }
+    .nav-menu ul li a:hover {
+        background-color: #f0f0f0;
+    }
+    .hotro{
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        padding: 15px 15px;
+        display: flex; /* Sử dụng flexbox để căn chỉnh văn bản giữa */
+        justify-content: left; /* Căn giữa theo chiều ngang */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        transition: background-color 0.3s ease;
+        opacity: 0.5;
+        border-bottom: none;
+    }
+
+
+    .support {
+        display: flex; /* Sử dụng flexbox để căn chỉnh nội dung */
+        align-items: center; /* Căn giữa theo chiều dọc */
+        border-bottom: none;
+        width: 100%;
+    }
+    .nav-menu .support a {
+        border-bottom: none;
+    }
+    
+
+    .logo-container {
+        flex: 0 0 auto; /* Không co giãn, không co nhỏ */
+        background-color: #76c5bf;
+        margin-bottom:2px;
+      }
+      .logoImage{
+        border-radius: 50%;
+      }
+
+
+      header{
+        border-bottom: solid #76c5bf 1.5px;
+        margin-left: 0.7px;
+        margin-right: 0.5px;
+      }
+
+
+    /* Thiết kế body */
+    body {
+        margin-left: 0.5px;
+        margin-right: 0.5px;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Thiết kế footer */
+    footer {
+        margin-left: 0.5px;
+        margin-right: 0.5px;
+        border-top: solid rgb(234, 216, 216) 0.55px;
+        text-align: center;
+        padding: 10px;
+    }
+}
+
+
