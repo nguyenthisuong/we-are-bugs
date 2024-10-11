@@ -8,6 +8,7 @@
         background: linear-gradient(135deg, #618264, #B0d9b1, #ffffff);
         background-size: 400% 400%;
         animation: wave 10s ease infinite;
+        margin: 0;
     }
 
     @keyframes wave {
@@ -22,16 +23,14 @@
         width: 300px;
         display: flex;
         flex-direction: column;
-        /* background-color: rgba(255, 255, 255, 0.9); */
+        align-items: center; 
     }
+
     .register-form h2 {
         text-align: center;
         margin-bottom: 20px;
     }
-    .register-form label {
-        display: block;
-        margin-bottom: 5px;
-    }
+
     .register-form input {
         font-weight: bold;
         width: 100%;
@@ -40,20 +39,30 @@
         border: 1px solid #ccc;
         border-radius: 10px;
     }
+
     .register-form button {
-        background-color: #d2e7d3;
+        /* background-color: #d2e7d3; */
+        
         border: 2px solid #ccc; 
-        border-radius: 60%;
-        padding: 15px; 
-        cursor: pointer; /* Con trỏ tay khi di chuột */
-        display: inline-flex; /* Hiển thị dạng khối và canh giữa ảnh */
-        justify-content: center; /* Canh giữa ảnh theo chiều ngang */
-        align-items: center; /* Canh giữa ảnh theo chiều dọc */
-        transition: 0.3s; /* Hiệu ứng chuyển đổi mượt */
-        margin-bottom: 10px;
+        border-radius: 50%;
+        padding: 0; 
+        width: 150px; 
+        height: 90px;
+        cursor: pointer;
+        display: inline-flex; /* Giữ kích thước dựa trên nội dung */
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+        align-self: center; /* Giới hạn nút chỉ canh giữa theo form */
     }
 
-    /* .register-form button:hover {
-        background-color: #2980b9;
-    } */
+    .register-form button img {
+        width: 50px; 
+        height: 50px;
+    }
+
+    .register-form button:hover {
+        background-color: #c2e7c2;
+        border-color: #3498db;
+    }
 }
