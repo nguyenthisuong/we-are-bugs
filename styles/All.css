@@ -3,29 +3,29 @@
     display: none;
 }
 
-/* CSS cho điện thoại */
+/* スマトフォン用*/
 @media only screen and (max-width: 767px) {
 
     .search1 {
-        /* Tô màu viền */
-        border: 2px solid #007bff; /* Màu viền là màu xanh dương */
-        border-radius: 5px; /* Để viền cong */
-        padding: 5px; /* Thêm padding để ô tìm kiếm trông đẹp hơn */
-        /* Kiểm soát việc zoom */
-        touch-action: manipulation; /* Ngăn chặn trượt mượt và các tác động khác */
-        -ms-touch-action: manipulation; /* Cho trình duyệt Internet Explorer/Edge */
+        
+        border: 2px solid #007bff; 
+        border-radius: 5px; 
+        padding: 5px; 
+        /* zoom */
+        touch-action: manipulation; /*すべる*/
+        -ms-touch-action: manipulation; /*  Internet Explorer/Edge */
         -webkit-user-select: none; /* Ngăn chặn việc chọn văn bản bên trong ô tìm kiếm */
         -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Ngăn chặn hiệu ứng tap mặc định */
     }
-    /* Ẩn thanh nav mặc định trên điện thoại */
+    /*nav　hide */
     .nav-menu {
         display: none;  
     }
-    /* Hiển thị thanh nav khi được kích hoạt */
+    /* nav 表示 */
     .menu-toggle.active + .nav-menu {
         display: block;
     }
-    /* Giao diện dấu 3 gạch */
+    /*menu ICON */
     .menu-toggle {
         display: block;
         background: none;
@@ -64,7 +64,7 @@
         top: 8px;
     }
 
-    /* Khi nút được nhấp vào, hiển thị menu */
+
     .menu-toggle.active .menu-icon {
         background-color: transparent;
     }
@@ -85,16 +85,15 @@
         padding: 10px;
         margin: 0px, 5px, 0px, 5px;
         border-radius: 10px;
-        border: 0.1px solid #bec2c6; /* Màu viền là màu xanh dương */
+        border: 0.1px solid #bec2c6;
       }
 
-    /* CSS cho các mục trong thanh nav */
     .nav-menu ul {
         list-style: none;
     }
 
     .nav-menu ul li {
-        margin-bottom: 0; /* Loại bỏ margin dưới */
+        margin-bottom: 0; 
     }
     
     .nav-menu ul li:last-child a {
