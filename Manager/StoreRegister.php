@@ -82,7 +82,7 @@ if (isset($_GET['success']) && $_GET['success'] === 'true') {
         header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
         header("Pragma: no-cache"); // HTTP 1.0.
         header("Expires: 0"); // Ngăn cache.
-        header('Location: ./main.html');
+        header('Location: ./StoreLogin.html');
     
     exit; // Đảm bảo dừng các mã PHP sau khi chuyển hướng
 } 
