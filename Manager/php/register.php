@@ -1,13 +1,10 @@
 <?php
-header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: POST, OPTIONS");
-header("Access-Control-Allow-Headers: Content-Type, Authorization");
 
 // connect
 $servername = "localhost";
-$username = "sys2se_24_codetipi";
-$password = "DbMdTe9RsE";
-$dbname = "sys2se_24_codetipi";
+$username = "dbuser";
+$password = "ecc";
+$dbname = "wearebugs";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
@@ -31,18 +28,38 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($result->num_rows > 0) {
         // 存在場合
-        echo "ユーザー名存在します";
-    } else {
+        // echo "ユーザー名存在します";
+        // header("Location: ../StoreRegister.php?error=username_exists");
+        
+        header("Location: ../StoreRegister.php?error=username_exists&username=" . urlencode($username) . "&email=" . urlencode($email));
+
+        exit();
+    }
+        // Kiểm tra email có tồn tại không
+        $check_email_sql = "SELECT * FROM user WHERE mail = ?";
+        $stmt = $conn->prepare($check_email_sql);
+        $stmt->bind_param("s", $email);
+        $stmt->execute();
+        $result = $stmt->get_result();
+    
+        if ($result->num_rows > 0) {
+            // Nếu email đã tồn tại
+            // header("Location: ../StoreRegister.php?error=email_exists");
+            header("Location: ../StoreRegister.php?error=email_exists&username=" . urlencode($username) . "&email=" . urlencode($email));
+            exit();
+        }
+     else {
         // token 発生
         $token = generateToken();
 
         // INSERT 
-        $sql = "INSERT INTO user (username, password, email, token) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO user (username, password, mail, token) VALUES (?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ssss", $username, $password, $email, $token);
 
         if ($stmt->execute()) {
             echo "登録成功 <br>";
+            header("Location: ../main.html");
             // echo "userID: " . $user_id . "<br>";
             // echo "Username: " . $username . "<br>";
             // echo "email: " . $family_id . "<br>";
@@ -54,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $conn->close();
 } else {
     // POST ではない
-    echo "registerphp 59 LLLLLLL";
+    echo "POST　ではない";
 }
 
 function generateToken() {
