@@ -56,14 +56,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $sql = "INSERT INTO user (username, password, mail, token) VALUES (?, ?, ?, ?)";
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ssss", $username, $password, $email, $token);
-
         if ($stmt->execute()) {
-            echo "登録成功 <br>";
-            header("Location: ../main.html");
-            // echo "userID: " . $user_id . "<br>";
-            // echo "Username: " . $username . "<br>";
-            // echo "email: " . $family_id . "<br>";
-        } else {
+            header("Location: ../StoreRegister.php?success=true"); // Thêm tham số để biết đăng ký thành công
+            exit();
+        }
+         else {
             echo "insert ERROR";
         }
     }

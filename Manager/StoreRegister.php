@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/StoreRegister.css">
     <title>登録</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.7/lottie.min.js"></script>
 </head>
 <body>
     <div class="">
@@ -41,10 +42,42 @@
             </button>
         </form>
 
-        <!-- Thông báo thành công -->
-        <?php if (isset($_GET['success'])): ?>
-            <p style="color: green;">登録に成功しました！</p> <!-- Đăng ký thành công! -->
-        <?php endif; ?>
+        <div id="loading" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.8); justify-content: center; align-items: center;">
+        <div id="lottie"></div>
+        </div>
+        <script>
+            // Khởi tạo Lottie
+            document.addEventListener('DOMContentLoaded', function () {
+    // Khởi tạo Lottie
+    const animation = lottie.loadAnimation({
+        container: document.getElementById('lottie'),
+        renderer: 'svg',
+        loop: true,
+        autoplay: true,
+        path: './images/loading.json' // Đảm bảo đường dẫn này là chính xác
+    });
+
+    // Hiện animation khi người dùng nhấn nút đăng ký
+    document.querySelector('.register-form').addEventListener('submit', function (event) {
+        // Ngăn chặn hành động gửi form ngay lập tức
+        event.preventDefault();
+        document.getElementById('loading').style.display = 'flex';
+
+        // Gửi form sau 4 giây
+        setTimeout(() => {
+            // Gửi dữ liệu form
+            this.submit();
+        }, 2500); // Thời gian hiển thị animation
+        });
+    });
+        </script>
+<?php 
+if (isset($_GET['success']) && $_GET['success'] === 'true') {
+    // Nếu 'success' có giá trị 'true', chuyển hướng đến 'smain.php'
+    header('Location: ./main.html');
+    exit; // Đảm bảo dừng các mã PHP sau khi chuyển hướng
+} 
+?>
     </div>
 </body>
 </html>

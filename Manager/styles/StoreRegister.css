@@ -65,4 +65,28 @@
         background-color: #c2e7c2;
         border-color: #3498db;
     }
+
+    /*mark*/
+    /* StoreRegister.css */
+
+.loading {
+    display: none; /* Ẩn spinner theo mặc định */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999; /* Đảm bảo spinner hiển thị trên cùng */
+}
+
+.checkmark {
+    display: none; /* Ẩn dấu checkmark theo mặc định */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 999; /* Đảm bảo checkmark hiển thị trên cùng */
+    font-size: 48px; /* Kích thước dấu checkmark */
+    color: green; /* Màu sắc dấu checkmark */
+}
+
 }
