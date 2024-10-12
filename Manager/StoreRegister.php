@@ -77,7 +77,13 @@
 <?php 
 if (isset($_GET['success']) && $_GET['success'] === 'true') {
     // Nếu 'success' có giá trị 'true', chuyển hướng đến 'smain.php'
-    header('Location: ./main.html');
+    
+        // Thêm các tiêu đề để ngăn trình duyệt lưu cache
+        header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+        header("Pragma: no-cache"); // HTTP 1.0.
+        header("Expires: 0"); // Ngăn cache.
+        header('Location: ./main.html');
+    
     exit; // Đảm bảo dừng các mã PHP sau khi chuyển hướng
 } 
 ?>
