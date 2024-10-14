@@ -1,4 +1,5 @@
 /* Reset styles */
+@media only screen and (max-width: 767px) {
 * {
     margin: 0;
     padding: 0;
@@ -164,4 +165,4 @@ body {
     width: 100%;
     border-radius: 10px;
 }
-
+}

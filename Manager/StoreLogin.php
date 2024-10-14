@@ -1,3 +1,15 @@
+<?php
+//Xóa tất cả các cookie
+// Xóa cookie 'username' và 'token' nếu tồn tại
+if (isset($_COOKIE['username'])) {
+    setcookie('username', '', time() - 86400, "/");
+}
+if (isset($_COOKIE['token'])) {
+    setcookie('token', '', time() - 86400, "/");
+}
+
+// Tiếp tục với giao diện đăng nhập
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -11,6 +23,8 @@
 <body>
     <div class="login-form">
         <h2>ログイン</h2>
+
+        
 
         <form action="./php/StoreLoginP.php" method="POST"> <!-- Thay đổi đường dẫn đến file xử lý đăng nhập -->
             <div class="login-info">

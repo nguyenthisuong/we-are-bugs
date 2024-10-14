@@ -12,6 +12,7 @@ if ($conn->connect_error) {
     exit();
 }
 
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // データ受け取り
     $username = $conn->real_escape_string($_POST['username']);
