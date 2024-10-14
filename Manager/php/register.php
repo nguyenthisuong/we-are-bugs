@@ -28,9 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($result->num_rows > 0) {
         // 存在場合
-        // echo "ユーザー名存在します";
-        // header("Location: ../StoreRegister.php?error=username_exists");
-        
         header("Location: ../StoreRegister.php?error=username_exists&username=" . urlencode($username) . "&email=" . urlencode($email));
 
         exit();

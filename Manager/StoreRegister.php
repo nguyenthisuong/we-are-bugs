@@ -14,7 +14,7 @@
         if (localStorage.getItem('registerSuccess')) {
             localStorage.removeItem('registerSuccess');
             setTimeout(function() {
-                window.location.href = './StoreLogin.html';//loginpage 移動
+                window.location.href = './StoreLogin.php';//loginpage 移動
             }, 0); 
         }
     </script>
