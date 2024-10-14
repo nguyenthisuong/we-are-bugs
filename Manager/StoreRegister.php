@@ -8,6 +8,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.7/lottie.min.js"></script>
 </head>
 <body>
+
+    <script>
+        //local storage check
+        if (localStorage.getItem('registerSuccess')) {
+            localStorage.removeItem('registerSuccess');
+            setTimeout(function() {
+                window.location.href = './StoreLogin.html';//loginpage 移動
+            }, 0); 
+        }
+    </script>
     <div class="">
         
         <form class="register-form" action="./php/register.php" method="post">

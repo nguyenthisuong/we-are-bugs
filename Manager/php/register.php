@@ -48,19 +48,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             header("Location: ../StoreRegister.php?error=email_exists&username=" . urlencode($username) . "&email=" . urlencode($email));
             exit();
         }
-     else {
-        // INSERT 
-        $sql = "INSERT INTO user (username, password, mail) VALUES (?, ?, ?)";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("sss", $username, $password, $email);
-        if ($stmt->execute()) {
-            header("Location: ../StoreRegister.php?success=true"); 
-            exit();
+        else {
+            // INSERT 
+            $sql = "INSERT INTO user (username, password, mail) VALUES (?, ?, ?)";
+            $stmt = $conn->prepare($sql);
+            $stmt->bind_param("sss", $username, $password, $email);
+            if ($stmt->execute()) {
+                // FLAG　保存する
+                echo "<script>
+                        localStorage.setItem('registerSuccess', 'true');
+                        window.location.href = '../StoreRegister.php';
+                      </script>";
+                exit();
+            } else {
+                echo "insert ERROR";
+            }
         }
-         else {
-            echo "insert ERROR";
-        }
-    }
+        
     $stmt->close();
     $conn->close();
 } else {
