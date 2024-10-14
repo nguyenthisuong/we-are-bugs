@@ -21,19 +21,19 @@
 
 
             <?php if (isset($_GET['error']) && $_GET['error'] == 'email_exists'): ?>
-            <span style="color: red;">既に登録しているメールです！</span> <!-- Địa chỉ email không hợp lệ! -->
+            <span style="color: red;">既に登録しているメールです！</span> 
             <?php endif; ?>
             <label for="email"></label>
             <input type="email" id="email" name="email" placeholder="メールを入力" required value="<?= isset($_GET['email']) ? htmlspecialchars($_GET['email']) : '' ?>" >
 
             <?php if (isset($_GET['error']) && $_GET['error'] == 'password_too_short'): ?>
-            <span style="color: red;">パスワードは6文字以上でなければなりません！</span> <!-- Mật khẩu phải có ít nhất 6 ký tự! -->
+            <span style="color: red;">パスワードは6文字以上でなければなりません！</span> 
             <?php endif; ?>
             <label for="password"></label>
             <input type="password" id="password" name="password" placeholder="パスワード" required>
 
             <?php if (isset($_GET['error']) && $_GET['error'] == 'password_mismatch'): ?>
-            <span style="color: red;">パスワードが一致しません！</span> <!-- Mật khẩu không khớp! -->
+            <span style="color: red;">パスワードが一致しません！</span> 
             <?php endif; ?>
 
             <label for="confirm_password"></label>
@@ -49,42 +49,39 @@
         <div id="lottie"></div>
         </div>
         <script>
-            // Khởi tạo Lottie
+            // Lottie 起動
             document.addEventListener('DOMContentLoaded', function () {
-    // Khởi tạo Lottie
+    // Lottie
     const animation = lottie.loadAnimation({
         container: document.getElementById('lottie'),
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: './images/loading.json' // Đảm bảo đường dẫn này là chính xác
+        path: './images/loading.json' 
     });
 
-    // Hiện animation khi người dùng nhấn nút đăng ký
+    // animation
     document.querySelector('.register-form').addEventListener('submit', function (event) {
-        // Ngăn chặn hành động gửi form ngay lập tức
+        // 
         event.preventDefault();
         document.getElementById('loading').style.display = 'flex';
 
-        // Gửi form sau 4 giây
+        // set time animation
         setTimeout(() => {
-            // Gửi dữ liệu form
             this.submit();
-        }, 2500); // Thời gian hiển thị animation
+        }, 2500); 
         });
     });
         </script>
 <?php 
-if (isset($_GET['success']) && $_GET['success'] === 'true') {
-    // Nếu 'success' có giá trị 'true', chuyển hướng đến 'smain.php'
-    
-        // Thêm các tiêu đề để ngăn trình duyệt lưu cache
+if (isset($_GET['success']) && $_GET['success'] === 'true') {    
+        // cache 
         header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
         header("Pragma: no-cache"); // HTTP 1.0.
-        header("Expires: 0"); // Ngăn cache.
+        header("Expires: 0"); // 
         header('Location: ./StoreLogin.html');
     
-    exit; // Đảm bảo dừng các mã PHP sau khi chuyển hướng
+    exit;
 } 
 ?>
     </div>

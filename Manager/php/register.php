@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         exit();
     }
-        // Kiểm tra email có tồn tại không
+        // email 存在かどうか
         $check_email_sql = "SELECT * FROM user WHERE mail = ?";
         $stmt = $conn->prepare($check_email_sql);
         $stmt->bind_param("s", $email);
@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $result = $stmt->get_result();
     
         if ($result->num_rows > 0) {
-            // Nếu email đã tồn tại
+            // 存在場合
             // header("Location: ../StoreRegister.php?error=email_exists");
             header("Location: ../StoreRegister.php?error=email_exists&username=" . urlencode($username) . "&email=" . urlencode($email));
             exit();
@@ -57,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt = $conn->prepare($sql);
         $stmt->bind_param("ssss", $username, $password, $email, $token);
         if ($stmt->execute()) {
-            header("Location: ../StoreRegister.php?success=true"); // Thêm tham số để biết đăng ký thành công
+            header("Location: ../StoreRegister.php?success=true"); 
             exit();
         }
          else {

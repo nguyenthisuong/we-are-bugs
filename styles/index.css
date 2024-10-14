@@ -1,38 +1,167 @@
-.product-slider {
-    padding-top: 5px;
-    padding-bottom: 5px;
-    display: flex; /* Đảm bảo các sản phẩm hiển thị ngang hàng */
-    overflow-x: auto; /* Cho phép cuộn ngang để xem các sản phẩm */
-    white-space: nowrap; /* Ngăn các mục xuống hàng */
-  }
-  
-  .product-item {
-    position: relative;
-    width: 350px; /* Chiều rộng tùy ý */
-    height: 200px; /* Chiều cao tùy ý */
-    flex-shrink: 0; /* Ngăn không cho các mục thu nhỏ khi không đủ không gian */
-    margin-right: 10px; /* Khoảng cách giữa các mục */
-    border: 1px solid #ccc; /* Viền cho mục */
-    box-sizing: border-box; /* Bao gồm padding và border trong kích thước tổng */
-  }
-  
-  .product_type_img {
-    width: 100%;
-    height: 75%; /* Chỉ chiếm 75% chiều cao của .product-item */
-    object-fit: cover; /* Đảm bảo hình ảnh phù hợp và đầy đủ không gian mà không méo */
-  }
-  
-  .product-description {
-    position: absolute;
-    bottom: 0; /* Đặt ở cuối của .product-item */
-    width: 100%; /* Chiều rộng bằng với .product-item */
-    height: 25%; /* Chiếm 25% chiều cao của .product-item */
-    background-color: white; /* Màu nền */
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #618264, #B0d9b1, #ffffff);
+    background-size: 400% 400%;
+    animation: wave 10s ease infinite;
+    margin: 0;
+}
+
+@keyframes wave {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Navbar */
+.navbar {
     display: flex;
-    align-items: center; /* Căn giữa nội dung theo chiều dọc */
-    justify-content: center; /* Căn giữa nội dung theo chiều ngang */
-    font-size: 16px; /* Kích thước phông chữ */
-    color: black; /* Màu chữ */
-    text-align: center; /* Căn giữa chữ */
-  }
-  
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    /* background: linear-gradient(135deg, #6f926f, #B0d9b1); */
+    background-size: 400% 400%;
+    /* animation: wave 10s ease infinite; Thêm hiệu ứng gợn sóng */
+}
+
+.menu-icon {
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.search-bar {
+    width: 60%;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Category Section */
+.category {
+    padding: 20px;
+}
+
+.title {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-family: 'Georgia', serif;
+}
+
+/* Filter Buttons */
+.filter-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    justify-content: flex-start; /* Đặt căn trái cho các nút */
+    overflow-x: auto; /* Cho phép cuộn ngang */
+    white-space: nowrap; /* Ngăn không cho các nút xuống dòng */
+}
+/* Ẩn thanh cuộn */
+.filter-buttons::-webkit-scrollbar {
+    display: none; /* Ẩn thanh cuộn trên Chrome, Safari và các trình duyệt dựa trên WebKit */
+}
+
+.filter-button {
+    padding: 4px 12px;
+    border-radius: 10px;
+    border: 1px solid #333;
+    background-color: rgba(255, 255, 255, 0.5); /* Màu nền trong suốt */
+    font-family: 'Georgia', serif;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-button.active {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Product Showcase */
+.product-showcase {
+    display: flex;
+    overflow-x: auto; 
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.product {
+    text-align: center;
+    position: relative;
+}
+
+/* Product Best sellers */
+.product-content img {
+    width: 100px;
+    height: 150px;
+    border-radius: 10px;
+    object-fit: cover;
+    transition: transform 0.3s;
+    border: 2px solid #e5dfdf; 
+}
+
+.product p {
+    margin-top: 5px;
+    font-size: 16px;
+    font-family: 'Georgia', serif;
+}
+
+.collection-title {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 18px;
+    font-style: italic;
+}
+
+/* Best Sellers Section */
+.best-sellers {
+    padding: 20px;
+}
+
+.best-sellers h2 {
+    font-family: 'Georgia', serif;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+.product-content {
+    margin: 10px;
+    text-align: center;
+    position: relative;
+}
+.product-showcase::-webkit-scrollbar {
+    display: none;
+}
+
+
+.view-all {
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 5px 10px;
+    cursor: pointer;
+    float: right;
+    margin-top: -30px;
+    margin-bottom: 10px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.product-grid img {
+    width: 100%;
+    border-radius: 10px;
+}
+
