@@ -49,13 +49,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
      else {
-        // token 発生
-        $token = generateToken();
-
         // INSERT 
-        $sql = "INSERT INTO user (username, password, mail, token) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO user (username, password, mail) VALUES (?, ?, ?)";
         $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssss", $username, $password, $email, $token);
+        $stmt->bind_param("sss", $username, $password, $email);
         if ($stmt->execute()) {
             header("Location: ../StoreRegister.php?success=true"); 
             exit();
@@ -71,7 +68,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     echo "POST　ではない";
 }
 
-function generateToken() {
-    return bin2hex(random_bytes(16));
-}
+// function generateToken() {
+//     return bin2hex(random_bytes(16));
+// }
 ?>
