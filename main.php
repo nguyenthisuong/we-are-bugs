@@ -33,15 +33,15 @@
      
     <section class="category">
 
-        <h1 class="title">Category 1</h1>
-        <div class="filter-buttons">
+        <h1 class="title">Men</h1>
+
+        <!-- <div class="filter-buttons">
             <button class="filter-button">Show All</button>
-            <!-- <button class="filter-button">Men</button>
+            <button class="filter-button">Men</button>
             <button class="filter-button">Women</button>
             <button class="filter-button">Children</button>
-            <button class="filter-button">Special Events</button> -->
-        </div>
-        
+            <button class="filter-button">Special Events</button>
+        </div> -->
         <!-- Product Showcase -->
         <div class="product-showcase">
             <div class="product-content">
@@ -72,6 +72,45 @@
         <button class="show-more-btn">Show More</button>
         <h2 class="collection-title">Fall-Winter Collection</h2>
     </section>
+
+    <!-- ----------------------------例-------------------------- -->
+    <section class="category">
+<h1 class="title">Men</h1>
+<!-- Product Showcase -->
+<div class="product-showcase">
+    <div class="product-content">
+        <img src="./images/facebook.png" alt="White Dress" />
+        <p class="rotated-text">White Dress<br>8000 ¥</p>
+    </div>
+    <div class="product-content">
+        <img src="./images/facebook.png" alt="White Dress" />
+        <p class="rotated-text">White Dress<br>8000 ¥</p>
+    </div>
+    <div class="product-content">
+        <img src="./images/facebook.png" alt="White Dress" />
+        <p class="rotated-text">White Dress<br>8000 ¥</p>
+    </div>
+    <div class="product-content">
+        <img src="./images/facebook.png" alt="White Dress" />
+        <p class="rotated-text">White Dress<br>8000 ¥</p>
+    </div>
+    <div class="product-content">
+        <img src="./images/facebook.png" alt="White Dress" />
+        <p class="rotated-text">White Dress<br>8000 ¥</p>
+    </div>
+    <div class="product-content">
+        <img src="./images/facebook.png" alt="White Dress" />
+        <p class="rotated-text">White Dress<br>8000 ¥</p>
+    </div>
+</div>
+<button class="show-more-btn">Show More</button>
+<h2 class="collection-title">Fall-Winter Collection</h2>
+</section>
+    <!-- ----------------------------例-------------------------- -->
+
+
+
+
 
     <!-- Best Sellers Section -->
     <section class="best-sellers">
