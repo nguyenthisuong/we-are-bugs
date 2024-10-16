@@ -29,6 +29,13 @@
        </nav>
        <div class="overlay"></div>
 
+       <div class="filter-buttons">
+    <button class="filter-button" data-target="#men">Men</button>
+    <button class="filter-button" data-target="#women">Women</button>
+    <button class="filter-button" data-target="#child">Children</button>
+    <button class="filter-button">Special Events</button>
+</div>
+
 <section id="product-section" class="category">
     <!-- Nhóm Men -->
     <div class="group" id="men">
