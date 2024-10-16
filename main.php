@@ -36,6 +36,27 @@
     <button class="filter-button">Special Events</button>
 </div>
 
+<section class="best-sellers">
+    <h2>Best Sellers</h2>
+    <div class="slider">
+        <button class="arrow left">&#10094;</button>
+        <div class="product-grid">
+            <div class="product">
+                <img src="./images/facebook.png" alt="Coat" />
+            </div>
+            <div class="product">
+                <img src="./images/top_button.png" alt="Coat" />
+            </div>
+            <div class="product">
+                <img src="./images/twitter.png" alt="Coat" />
+            </div>
+        </div>
+        <button class="arrow right">&#10095;</button>
+    </div>
+    <script src="./scripts/menubest.js"></script>
+</section>
+
+
 <section id="product-section" class="category">
     <!-- Nhóm Men -->
     <div class="group" id="men">
@@ -118,23 +139,6 @@
     </div>
 </section>
 
-
-    <!-- Best Sellers Section -->
-    <section class="best-sellers">
-        <h2>Best Sellers</h2>
-        <button class="view-all">View All</button>
-        <div class="product-grid">
-            <div class="product">
-                <img src="./images/facebook.png" alt="Coat" />
-            </div>
-            <div class="product">
-                <img src="./images/top_button.png" alt="Coat" />
-            </div>
-            <div class="product">
-                <img src="./images/twitter.png" alt="Coat" />
-            </div>
-        </div>
-        <script src="./scripts/menu.js"></script>
-    </section>
+    <script src="./scripts/menu.js"></script>
 </body>
 </html>

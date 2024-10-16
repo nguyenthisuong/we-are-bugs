@@ -104,7 +104,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
-    max-height: 200px; /* Giới hạn chiều cao ban đầu */
+    max-height: 220px; /* Giới hạn chiều cao ban đầu */
     overflow: hidden;  /* Ẩn nội dung vượt quá */
     transition: max-height 0.5s ease;
     justify-content: space-around;
@@ -124,7 +124,8 @@ body {
     width: 100px;
     height: 150px;
     border-radius: 10px;
-    object-fit: cover;
+    /* object-fit: cover; */
+    object-fit: contain;
 }
 
 /* Nút Show More */
@@ -218,68 +219,56 @@ body {
 }
 
 
-/* =============================nav menu------------------------------ */
-.product {
-    text-align: center;
+/* =============================END nav menu------------------------------ */
+
+/* -----------------------------------------besstseleers------------------------------ */
+.best-sellers {
     position: relative;
+    width: 100%;
+    overflow: hidden;
 }
 
-/* Product Best sellers */
-.product-content img {
-    width: 100px;
+.slider {
+    display: flex;
+    align-items: center;
+}
+
+.product-grid {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.product {
+    min-width: 100%; /* Mỗi sản phẩm chiếm toàn bộ chiều rộng của khung */
+    box-sizing: border-box;
+}
+
+.product img{
+    width: 250px;
     height: 150px;
     border-radius: 10px;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.3s;
     border: 2px solid #e5dfdf; 
 }
 
-.product p {
-    margin-top: 5px;
-    font-size: 16px;
-    font-family: 'Georgia', serif;
-}
-
-.collection-title {
-    text-align: center;
-    margin-top: 10px;
-    font-size: 18px;
-    font-style: italic;
-}
-
-/* Best Sellers Section */
-.best-sellers {
-    padding: 20px;
-}
-
-.best-sellers h2 {
-    font-family: 'Georgia', serif;
-    font-size: 24px;
-    margin-bottom: 10px;
-}
-
-
-.view-all {
-    background-color: #fff;
-    border: 1px solid #000;
-    padding: 4px 12px;
-    border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.5); /* Màu nền trong suốt */
-    padding: 5px 10px;
+.arrow {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 10px;
     cursor: pointer;
-    float: right;
-    margin-top: -30px;
-    margin-bottom: 10px;
+    font-size: 24px;
 }
 
-.product-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+.arrow.left {
+    margin-right: 10px;
 }
 
-.product-grid img {
-    width: 100%;
-    border-radius: 10px;
+.arrow.right {
+    margin-left: 10px;
 }
+/* ---------------------------------------- END -besstseleers------------------------------ */
+
 }
+
+
