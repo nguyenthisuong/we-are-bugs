@@ -29,6 +29,7 @@ body {
     /* background: linear-gradient(135deg, #6f926f, #B0d9b1); */
     background-size: 400% 400%;
     /* animation: wave 10s ease infinite; Thêm hiệu ứng gợn sóng */
+    border-bottom: solid 1px rgb(255, 255, 255);
 }
 
 .menu-icon {
@@ -72,6 +73,7 @@ body {
     gap: 10px;
     margin-bottom: 5px;
     padding-bottom: 1px;
+    padding-top: 10px;
     justify-content: flex-start; /* Đặt căn trái cho các nút */
     overflow-x: auto; /* Cho phép cuộn ngang */
     white-space: nowrap; /* Ngăn không cho các nút xuống dòng */
