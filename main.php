@@ -19,7 +19,7 @@
           <li><a href="main.php">ホームページ</a></li>
           <li><a href="#">商品</a></li>
           <li><a href="#">お店について</a></li>
-          <li><a href="#">登録</a></li>
+          <li><a href="#">会員登録</a></li>
           <li><a href="#">ログイン</a></li>
           <li class="support-title">サポート</li>
           <li class="support"><i class="fa fa-phone"></i><a class="support" href="tel">+81000000000000</a></li>
@@ -33,9 +33,9 @@
     <section class="category">
         <h1 class="title">Category</h1>
         <div class="filter-buttons">
-            <button class="filter-button">All</button>
+            <button class="filter-button active">All</button>
             <button class="filter-button">Men</button>
-            <button class="filter-button active">Women</button>
+            <button class="filter-button">Women</button>
             <button class="filter-button">Children</button>
             <button class="filter-button">Special Events</button>
         </div>
