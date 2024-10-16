@@ -29,87 +29,87 @@
        </nav>
        <div class="overlay"></div>
 
-    <!-- Category Section -->
-     
-    <section class="category">
-
+<section id="product-section" class="category">
+    <!-- Nhóm Men -->
+    <div class="group" id="men">
         <h1 class="title">Men</h1>
-
-        <!-- <div class="filter-buttons">
-            <button class="filter-button">Show All</button>
-            <button class="filter-button">Men</button>
-            <button class="filter-button">Women</button>
-            <button class="filter-button">Children</button>
-            <button class="filter-button">Special Events</button>
-        </div> -->
-        <!-- Product Showcase -->
         <div class="product-showcase">
             <div class="product-content">
                 <img src="./images/facebook.png" alt="White Dress" />
                 <p class="rotated-text">White Dress<br>8000 ¥</p>
             </div>
             <div class="product-content">
-                <img src="./images/facebook.png" alt="White Dress" />
-                <p class="rotated-text">White Dress<br>8000 ¥</p>
+                <img src="./images/facebook.png" alt="Black Suit" />
+                <p class="rotated-text">Black Suit<br>12000 ¥</p>
             </div>
             <div class="product-content">
-                <img src="./images/facebook.png" alt="White Dress" />
-                <p class="rotated-text">White Dress<br>8000 ¥</p>
+                <img src="./images/facebook.png" alt="Blue Shirt" />
+                <p class="rotated-text">Blue Shirt<br>5000 ¥</p>
             </div>
             <div class="product-content">
-                <img src="./images/facebook.png" alt="White Dress" />
-                <p class="rotated-text">White Dress<br>8000 ¥</p>
+                <img src="./images/facebook.png" alt="Jacket" />
+                <p class="rotated-text">Jacket<br>15000 ¥</p>
             </div>
             <div class="product-content">
-                <img src="./images/facebook.png" alt="White Dress" />
-                <p class="rotated-text">White Dress<br>8000 ¥</p>
-            </div>
-            <div class="product-content">
-                <img src="./images/facebook.png" alt="White Dress" />
-                <p class="rotated-text">White Dress<br>8000 ¥</p>
+                <img src="./images/facebook.png" alt="Jeans" />
+                <p class="rotated-text">Jeans<br>6000 ¥</p>
             </div>
         </div>
-        <button class="show-more-btn">Show More</button>
-        <h2 class="collection-title">Fall-Winter Collection</h2>
-    </section>
+        <button class="show-more-btn" data-group="men">Show More</button>
+    </div>
 
-    <!-- ----------------------------例-------------------------- -->
-    <section class="category">
-<h1 class="title">Men</h1>
-<!-- Product Showcase -->
-<div class="product-showcase">
-    <div class="product-content">
-        <img src="./images/facebook.png" alt="White Dress" />
-        <p class="rotated-text">White Dress<br>8000 ¥</p>
+    <!-- Nhóm Women -->
+    <div class="group" id="women">
+        <h1 class="title">Women</h1>
+        <div class="product-showcase">
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Red Dress" />
+                <p class="rotated-text">Red Dress<br>9000 ¥</p>
+            </div>
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Green Top" />
+                <p class="rotated-text">Green Top<br>7000 ¥</p>
+            </div>
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Yellow Skirt" />
+                <p class="rotated-text">Yellow Skirt<br>7500 ¥</p>
+            </div>
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Coat" />
+                <p class="rotated-text">Coat<br>10000 ¥</p>
+            </div>
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Scarf" />
+                <p class="rotated-text">Scarf<br>3000 ¥</p>
+            </div>
+        </div>
+        <button class="show-more-btn" data-group="women">Show More</button>
     </div>
-    <div class="product-content">
-        <img src="./images/facebook.png" alt="White Dress" />
-        <p class="rotated-text">White Dress<br>8000 ¥</p>
+
+    <!-- Nhóm Child -->
+    <div class="group" id="child">
+        <h1 class="title">Child</h1>
+        <div class="product-showcase">
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="T-Shirt" />
+                <p class="rotated-text">T-Shirt<br>4000 ¥</p>
+            </div>
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Shorts" />
+                <p class="rotated-text">Shorts<br>3000 ¥</p>
+            </div>
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Cap" />
+                <p class="rotated-text">Cap<br>2000 ¥</p>
+            </div>
+            <div class="product-content ">
+                <img src="./images/facebook.png" alt="Shoes" />
+                <p class="rotated-text">Shoes<br>5000 ¥</p>
+            </div>
+        </div>
+        <button class="show-more-btn" data-group="child">Show More</button>
     </div>
-    <div class="product-content">
-        <img src="./images/facebook.png" alt="White Dress" />
-        <p class="rotated-text">White Dress<br>8000 ¥</p>
-    </div>
-    <div class="product-content">
-        <img src="./images/facebook.png" alt="White Dress" />
-        <p class="rotated-text">White Dress<br>8000 ¥</p>
-    </div>
-    <div class="product-content">
-        <img src="./images/facebook.png" alt="White Dress" />
-        <p class="rotated-text">White Dress<br>8000 ¥</p>
-    </div>
-    <div class="product-content">
-        <img src="./images/facebook.png" alt="White Dress" />
-        <p class="rotated-text">White Dress<br>8000 ¥</p>
-    </div>
-</div>
-<button class="show-more-btn">Show More</button>
-<h2 class="collection-title">Fall-Winter Collection</h2>
 </section>
-    <!-- ----------------------------例-------------------------- -->
-
-
-
 
 
     <!-- Best Sellers Section -->

@@ -13,20 +13,26 @@ document.addEventListener('DOMContentLoaded', function () {
         navMenu.classList.remove('open');
     });
 });
-const showMoreButtons = document.querySelectorAll('.show-more-btn');
-// document.querySelector('.show-more-btn').addEventListener('click', function () {
-//     const showcase = document.querySelector('.product-showcase');
-//     showcase.classList.toggle('open'); // Mở hoặc đóng showcase
+// Lấy tất cả các nút "Show More"
+const showMoreBtns = document.querySelectorAll('.show-more-btn');
 
-//     // Thay đổi nội dung nút
-//     this.textContent = showcase.classList.contains('open') ? 'Show Less' : 'Show More';
-// });
-showMoreButtons.forEach(button => {
-    button.addEventListener('click', event => {
-    const showcase = document.querySelector('.product-showcase');
-    showcase.classList.toggle('open'); // Mở hoặc đóng showcase
+// Lặp qua từng nút và thêm sự kiện click
+showMoreBtns.forEach(button => {
+    button.addEventListener('click', () => {
+        // Lấy nhóm sản phẩm mà nút này thuộc về
+        const group = button.getAttribute('data-group');
+        const productShowcase = document.querySelector(`#${group} .product-showcase`);
 
-    // Thay đổi nội dung nút
-    this.textContent = showcase.classList.contains('open') ? 'Show Less' : 'Show More';
+        // Thêm hoặc xóa lớp 'open' để hiển thị hoặc ẩn sản phẩm
+        productShowcase.classList.toggle('open');
+
+        // Cập nhật văn bản nút tùy theo trạng thái
+        if (productShowcase.classList.contains('open')) {
+            button.textContent = 'Show Less';
+        } else {
+            button.textContent = 'Show More';
+        }
     });
 });
+
+
