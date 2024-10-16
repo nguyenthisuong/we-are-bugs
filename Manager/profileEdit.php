@@ -1,28 +1,42 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./styles/storeProEdit.css">
-    <title>登録</title>
+    <title>プロフィール</title>
+    <link rel="stylesheet" href="./styles/profile.css">
+    <script src="./scripts/profile.js"></script>
 </head>
+
 <body>
-    <div class="">
-        <form class="register-form" action="/submit_registration" method="post">
-            <h2>Register</h2>
-            <label for="店名"></label>
-            <input type="email" id="email" name="email" placeholder="メールを入力" required>
-    
-            <label for="住所"></label>
-            <input type="password" id="password" name="password" placeholder="パスワード" required>
-    
-            <label for="電話番号"></label>
-            <input type="password" id="confirm_password" name="confirm_password" placeholder="もう一回パスワード" required>
-    
-            <button type="submit">
-                <img src="./images/signupBtn.png" alt="Sign Up">
+    <div class="container">
+        <!-- アイコン -->
+        <div class="avatar-container">
+            <img id="avatar-preview" class="avatar" src="./images/facebook.png" alt="アイコン">
+            <label class="upload-button" for="avatar-input">
+                <img src="upload-icon.png" alt="上傳">
+            </label>
+            <input type="file" id="avatar-input" accept="image/*">
+        </div>
+
+        <div class="form">
+            <label for="shop-name">店名</label>
+            <input type="text" id="shop-name">
+
+            <label for="address">住所</label>
+            <input type="text" id="address">
+
+            <label for="phone">電話</label>
+            <input type="text" id="phone">
+        </div>
+
+        <div class="save">
+            <button class="save-button">
+                <img src="./images/signupBtn.png" alt="save">
             </button>
-        </form>
+        </div>
     </div>
 </body>
+
 </html>
