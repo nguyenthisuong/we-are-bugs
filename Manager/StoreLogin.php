@@ -1,6 +1,5 @@
 <?php
-//Xóa tất cả các cookie
-// Xóa cookie 'username' và 'token' nếu tồn tại
+
 if (isset($_COOKIE['username'])) {
     setcookie('username', '', time() - 86400, "/");
 }
@@ -8,7 +7,6 @@ if (isset($_COOKIE['token'])) {
     setcookie('token', '', time() - 86400, "/");
 }
 
-// Tiếp tục với giao diện đăng nhập
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -18,15 +16,13 @@ if (isset($_COOKIE['token'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/StoreLogin.css">
     <title>ログイン</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.7/lottie.min.js"></script>
 </head>
 
 <body>
     <div class="login-form">
         <h2>ログイン</h2>
-
-        
-
-        <form action="./php/StoreLoginP.php" method="POST"> <!-- Thay đổi đường dẫn đến file xử lý đăng nhập -->
+        <form class="login-form2" action="./php/StoreLoginP.php" method="POST"> 
             <div class="login-info">
             <?php if (isset($_GET['error']) && $_GET['error'] == 'username_not_found'): ?>
                 <span style="color: red;">ユーザー名が存在しない！</span>
@@ -39,6 +35,39 @@ if (isset($_COOKIE['token'])) {
                 <button type="submit">ログイン</button>
             </div>
         </form>
+
+        <!-- loading -->
+
+        <div id="loading" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.8); justify-content: center; align-items: center;">
+        <div id="lottie"></div>
+        </div>
+        <script>
+    // Lottie 起動
+    document.addEventListener('DOMContentLoaded', function () {
+// Lottie
+const animation = lottie.loadAnimation({
+container: document.getElementById('lottie'),
+renderer: 'svg',
+loop: true,
+autoplay: true,
+path: './images/loading.json' 
+});
+
+// animation
+document.querySelector('.login-form2').addEventListener('submit', function (event) {
+// 
+event.preventDefault();
+document.getElementById('loading').style.display = 'flex';
+
+// set time animation
+setTimeout(() => {
+    this.submit();
+}, 2500); 
+});
+});
+</script>
+
+        <!-- loading -->
 
         <div class="register-button">
             <a href="./StoreRegister.php">
