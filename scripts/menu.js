@@ -13,3 +13,10 @@ document.addEventListener('DOMContentLoaded', function () {
         navMenu.classList.remove('open');
     });
 });
+document.querySelector('.show-more-btn').addEventListener('click', function () {
+    const showcase = document.querySelector('.product-showcase');
+    showcase.classList.toggle('open'); // Mở hoặc đóng showcase
+
+    // Thay đổi nội dung nút
+    this.textContent = showcase.classList.contains('open') ? 'Show Less' : 'Show More';
+});

@@ -30,16 +30,18 @@
        <div class="overlay"></div>
 
     <!-- Category Section -->
+     
     <section class="category">
-        <h1 class="title">Category</h1>
+
+        <h1 class="title">Category 1</h1>
         <div class="filter-buttons">
-            <button class="filter-button active">All</button>
-            <button class="filter-button">Men</button>
+            <button class="filter-button">Show All</button>
+            <!-- <button class="filter-button">Men</button>
             <button class="filter-button">Women</button>
             <button class="filter-button">Children</button>
-            <button class="filter-button">Special Events</button>
+            <button class="filter-button">Special Events</button> -->
         </div>
-
+        
         <!-- Product Showcase -->
         <div class="product-showcase">
             <div class="product-content">
@@ -67,7 +69,7 @@
                 <p class="rotated-text">White Dress<br>8000 ¥</p>
             </div>
         </div>
-
+        <button class="show-more-btn">Show More</button>
         <h2 class="collection-title">Fall-Winter Collection</h2>
     </section>
 
