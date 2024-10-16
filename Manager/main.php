@@ -10,10 +10,10 @@ include('./php/auth_check.php');
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/mainMgr.css">
     <title>Main Page</title>
 </head>
 <body>
-    <h1>Chào mừng đến với trang chính!</h1>
-    <p>Bạn đã đăng nhập thành công.</p>
+    <h1>WELCOME</h1>
 </body>
 </html>
