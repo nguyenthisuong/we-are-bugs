@@ -42,19 +42,20 @@
         <button class="arrow left">&#10094;</button>
         <div class="product-grid">
             <div class="product">
-                <img src="./images/facebook.png" alt="Coat" />
+                <img src="./images/facebook.png" alt="Facebook" />
             </div>
             <div class="product">
-                <img src="./images/top_button.png" alt="Coat" />
+                <img src="./images/top_button.png" alt="Top Button" />
             </div>
             <div class="product">
-                <img src="./images/twitter.png" alt="Coat" />
+                <img src="./images/twitter.png" alt="Twitter" />
             </div>
         </div>
         <button class="arrow right">&#10095;</button>
     </div>
     <script src="./scripts/menubest.js"></script>
 </section>
+
 
 
 <section id="product-section" class="category">

@@ -227,48 +227,52 @@ body {
 .best-sellers {
     position: relative;
     width: 100%;
-    overflow: hidden;
+    overflow: hidden; /* Giúp ẩn phần không cần thiết */
 }
 
 .slider {
     display: flex;
     align-items: center;
+    justify-content: center; /* Căn giữa slider */
 }
 
 .product-grid {
     display: flex;
     transition: transform 0.5s ease;
+    width: 100%;
 }
 
 .product {
-    min-width: 100%; /* Mỗi sản phẩm chiếm toàn bộ chiều rộng của khung */
+    flex: 0 0 100%; /* Mỗi sản phẩm chiếm toàn bộ chiều rộng của khung */
     box-sizing: border-box;
 }
 
-.product img{
-    width: 250px;
-    height: 150px;
+.product img {
+    width: 100%; /* Chiếm toàn bộ chiều rộng của khung hình */
+    height: auto; /* Đảm bảo tỉ lệ khung hình được giữ nguyên */
+    object-fit: contain; /* Đảm bảo hình ảnh được thu nhỏ để vừa khung mà không bị cắt */
     border-radius: 10px;
-    object-fit: contain;
-    transition: transform 0.3s;
     border: 2px solid #e5dfdf; 
 }
 
 .arrow {
-    background-color: #f0f0f0;
+    background-color: rgba(240, 240, 240, 0.7); /* Màu nền nhẹ cho nút */
     border: none;
     padding: 10px;
     cursor: pointer;
     font-size: 24px;
+    z-index: 1; /* Đảm bảo nút hiển thị trên cùng */
+    position: absolute; /* Để định vị nút chính xác */
 }
 
 .arrow.left {
-    margin-right: 10px;
+    left: 10px; /* Đặt nút bên trái */
 }
 
 .arrow.right {
-    margin-left: 10px;
+    right: 10px; /* Đặt nút bên phải */
 }
+
 /* ---------------------------------------- END -besstseleers------------------------------ */
 
 }
