@@ -18,13 +18,6 @@ include('./php/auth_check.php');
 </head>
 
 <body>
-    <header>
-        <!-- ロゴ部分 -->
-        <div class="logo">
-            <img src="./images/twitter.png" alt="Logo">
-        </div>
-    </header>
-
     <div class="container">
         <!-- 左側のボタンメニュー -->
         <div class="menu">
@@ -48,6 +41,12 @@ include('./php/auth_check.php');
                 <img src="customer-icon.png" alt="顧客" class="icon">
                 <span>顧客</span>
             </button>
+        </div>
+
+        <!-- ロゴ部分 -->
+        <div class="logo">
+            <h1>WRB</h1>
+            <p>Fashion & Boutique</p>
         </div>
     </div>
 </body>
