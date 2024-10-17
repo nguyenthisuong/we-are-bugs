@@ -1,4 +1,9 @@
 @media only screen and (max-width: 767px) {
+    * {
+        margin: 0.5px;
+        padding: 0.5px;
+        box-sizing: border-box;
+    }
     body {
         font-family: Arial, sans-serif;
         display: flex;
