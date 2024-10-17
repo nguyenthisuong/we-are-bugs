@@ -22,7 +22,7 @@ rightArrow.addEventListener('click', nextProduct);
 leftArrow.addEventListener('click', previousProduct);
 
 // Tự động chuyển đổi sản phẩm sau mỗi 2 giây
-let autoSlide = setInterval(nextProduct, 2000);
+let autoSlide = setInterval(nextProduct, 3000);
 
 // Dừng tự động chuyển đổi khi người dùng nhấn vào các nút
 leftArrow.addEventListener('click', () => {

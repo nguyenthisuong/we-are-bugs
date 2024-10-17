@@ -50,6 +50,12 @@
             <div class="product">
                 <img src="./images/twitter.png" alt="Twitter" />
             </div>
+            <div class="product">
+                <img src="./images/twitter.png" alt="Twitter" />
+            </div>
+            <div class="product">
+                <img src="./images/twitter.png" alt="Twitter" />
+            </div>
         </div>
         <button class="arrow right">&#10095;</button>
     </div>

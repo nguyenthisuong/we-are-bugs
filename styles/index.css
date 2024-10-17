@@ -30,6 +30,8 @@ body {
     background-size: 400% 400%;
     /* animation: wave 10s ease infinite; Thêm hiệu ứng gợn sóng */
     border-bottom: solid 1px rgb(255, 255, 255);
+    font-size: 25px;
+    height: 80px;
 }
 
 .menu-icon {
@@ -39,6 +41,7 @@ body {
 
 .search-bar {
     width: 60%;
+    height: 25px;
     padding: 5px;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -89,7 +92,7 @@ body {
     border: 1px solid #333;
     background-color: rgba(255, 255, 255, 0.5); /* Màu nền trong suốt */
     font-family: 'Georgia', serif;
-    font-size: 12px;
+    font-size: 22px;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
@@ -243,16 +246,22 @@ body {
 }
 
 .product {
-    flex: 0 0 100%; /* Mỗi sản phẩm chiếm toàn bộ chiều rộng của khung */
+    width: 70%;
+    flex: 0 0 70%; /* Mỗi sản phẩm chiếm toàn bộ chiều rộng của khung */
     box-sizing: border-box;
+    margin-right: 15%;
+    margin-left: 15%;
+    align-items: center;
 }
 
 .product img {
-    width: 100%; /* Chiếm toàn bộ chiều rộng của khung hình */
-    height: auto; /* Đảm bảo tỉ lệ khung hình được giữ nguyên */
+    width: 100%;
+    margin-right: 20%;
+    height: 150px;
     object-fit: contain; /* Đảm bảo hình ảnh được thu nhỏ để vừa khung mà không bị cắt */
     border-radius: 10px;
     border: 2px solid #e5dfdf; 
+    
 }
 
 .arrow {
@@ -260,7 +269,7 @@ body {
     border: none;
     padding: 10px;
     cursor: pointer;
-    font-size: 24px;
+    font-size: 30px;
     z-index: 1; /* Đảm bảo nút hiển thị trên cùng */
     position: absolute; /* Để định vị nút chính xác */
 }
