@@ -9,7 +9,8 @@
     
 </head>
 <body>
-    <!-- Navbar -->
+    <header>
+        <!-- Navbar -->
     <div class="navbar">
         <div class="menu-icon">☰</div>
         <input type="text" class="search-bar" placeholder="Search...">
@@ -29,7 +30,9 @@
          </ul>
     </nav>
        <div class="overlay"></div>
+    </header>
 
+       <main>
        <div class="filter-buttons">
     <button class="filter-button" data-target="#men">Men</button>
     <button class="filter-button" data-target="#women">Women</button>
@@ -146,7 +149,9 @@
         <button class="show-more-btn" data-group="child">Show More</button>
     </div>
 </section>
-
-    <script src="./scripts/menu.js"></script>
+       </main>
+<footer>
+<script src="./scripts/menu.js"></script>
+</footer>
 </body>
 </html>
