@@ -58,14 +58,16 @@
            
         </div>
 
+        
+    </main>
+    <footer>
         <!-- Social Media Section -->
         <div class="social-media">
             <a href="#"><img src="../images/twitter.png" alt="Twitter"></a>
             <a href="#"><img src="../images/facebook.png" alt="Facebook"></a>
             <a href="#"><img src="../images/instagram.png" alt="Instagram"></a>
         </div>
-    </main>
-
+    </footer>
 
 </body>
 <script src="../scripts/menu.js"></script>

@@ -17,8 +17,9 @@
         margin-top: 80px;
     }
     footer{
-        padding: 100px;
-        background-color: #ccc;
+        margin: 5px;
+        padding: 0px;
+        /* background-color: #ccc; */
     }
     @keyframes wave {
         0% { background-position: 0% 50%; }
@@ -57,7 +58,7 @@
         margin: 0;
         padding: 0;
         border-bottom-left-radius: 5px;
-border-bottom-right-radius: 5px;
+        border-bottom-right-radius: 5px;
 
     
     }
