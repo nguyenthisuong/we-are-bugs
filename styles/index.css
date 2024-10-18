@@ -13,7 +13,9 @@ body {
     animation: wave 10s ease infinite;
     margin: 0;
 }
-
+main{
+    margin-top: 80px;
+}
 @keyframes wave {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -22,16 +24,21 @@ body {
 
 /* Navbar */
 .navbar {
+    position: fixed;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
-    /* background: linear-gradient(135deg, #6f926f, #B0d9b1); */
+    /* background-color: aqua; */
+    background: linear-gradient(135deg, #6f926f, #B0d9b1);
     background-size: 400% 400%;
     /* animation: wave 10s ease infinite; Thêm hiệu ứng gợn sóng */
     border-bottom: solid 1px rgb(255, 255, 255);
     font-size: 25px;
     height: 80px;
+    z-index: 100;
+
 }
 
 .menu-icon {
@@ -158,6 +165,7 @@ body {
 
 /* Ẩn menu theo mặc định */
 .nav-menu {
+    margin-top: 80px;
     position: fixed;
     /* top: 70px; */
     left: -100%;
@@ -170,6 +178,7 @@ body {
     justify-content: flex-start;
     transition: left 0.3s ease;
     z-index: 1000;
+    border-radius: 15px;
 }
 
 /* Khi menu được mở */
