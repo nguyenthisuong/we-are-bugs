@@ -53,9 +53,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // session 開始
             session_start();
             $_SESSION['userid'] = $userid; 
-            setcookie('username', $username, time() + (86400 * 30), "/"); //30day
-            setcookie('token', $token, time() + (86400 * 30), "/");
-            setcookie('loggedin', true, time() + (86400 * 30), "/");
+            setcookie('userid', $userid, time() + (864000 * 30), "/"); // 30 days
+            setcookie('username', $username, time() + (864000 * 30), "/"); //30day
+            setcookie('token', $token, time() + (8640000 * 30), "/");
+            setcookie('loggedin', true, time() + (8640000 * 30), "/");
             //page 移動
             header("Location: ../main.php");
             exit();

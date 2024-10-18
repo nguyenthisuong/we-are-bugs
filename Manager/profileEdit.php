@@ -1,3 +1,7 @@
+<?php
+// Gọi file xác thực người dùng trước khi load nội dung trang
+include('./php/auth_check.php');
+?>
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -13,29 +17,32 @@
     <div class="container">
         <!-- アイコン -->
         <div class="avatar-container">
-            <img id="avatar-preview" class="avatar" src="./images/facebook.png" alt="アイコン">
+            <img id="avatar-preview" class="avatar" src="./images/" alt="アイコン">
             <label class="upload-button" for="avatar-input">
                 <img src="upload-icon.png" alt="上傳">
             </label>
             <input type="file" id="avatar-input" accept="image/*">
         </div>
+        <!-- form^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
+        <form action="./php/storeProEditP.php" method="POST">
+    <div class="form">
+    <input type="hidden" name="userid" id="userid" value="<?php echo isset($_COOKIE['userid']) ? $_COOKIE['userid'] : ''; ?>">
+        <label for="shop-name">店名</label>
+        <input type="text" id="shop-name" name="sname" required>
 
-        <div class="form">
-            <label for="shop-name">店名</label>
-            <input type="text" id="shop-name">
+        <label for="address">住所</label>
+        <input type="text" id="address" name="address" required>
 
-            <label for="address">住所</label>
-            <input type="text" id="address">
-
-            <label for="phone">電話</label>
-            <input type="text" id="phone">
-        </div>
-
-        <div class="save">
-            <button class="save-button">
-                <img src="./images/signupBtn.png" alt="save">
-            </button>
-        </div>
+        <label for="phone">電話</label>
+        <input type="text" id="phone" name="phone" required >
+    </div>
+    
+    <div class="save">
+        <button type="submit" class="save-button">
+            <img src="./images/signupBtn.png" alt="save">
+        </button>
+    </div>
+</form>
     </div>
 </body>
 
