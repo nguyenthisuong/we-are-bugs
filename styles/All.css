@@ -1,178 +1,177 @@
-
-.menu-toggle {
-    display: none;
-}
-
-/* スマトフォン用*/
+/* Reset styles */
 @media only screen and (max-width: 767px) {
-
-    .search1 {
-        
-        border: 2px solid #007bff; 
-        border-radius: 5px; 
-        padding: 5px; 
-        /* zoom */
-        touch-action: manipulation; /*すべる*/
-        -ms-touch-action: manipulation; /*  Internet Explorer/Edge */
-        -webkit-user-select: none; /* Ngăn chặn việc chọn văn bản bên trong ô tìm kiếm */
-        -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* Ngăn chặn hiệu ứng tap mặc định */
-    }
-    /*nav　hide */
-    .nav-menu {
-        display: none;  
-    }
-    /* nav 表示 */
-    .menu-toggle.active + .nav-menu {
-        display: block;
-    }
-    /*menu ICON */
-    .menu-toggle {
-        display: block;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        width: 100%;
-        height: 40px;
-        justify-content: right;
-    }
-
-    .menu-icon {
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: #333;
-        position: relative;
-    }
-
-    .menu-icon::before,
-    .menu-icon::after {
-        content: '';
-        display: block;
-        width: 25px;
-        height: 3px;
-        background-color: #333;
-        position: absolute;
-        transition: transform 0.3s ease-in-out;
-    }
-
-    .menu-icon::before {
-        top: -8px;
-    }
-
-    .menu-icon::after {
-        top: 8px;
-    }
-
-
-    .menu-toggle.active .menu-icon {
-        background-color: transparent;
-    }
-
-    .menu-toggle.active .menu-icon::before {
-        transform: translateY(8px) rotate(45deg);
-    }
-
-    .menu-toggle.active .menu-icon::after {
-        transform: translateY(-8px) rotate(-45deg);
-    }
-
-    /*  */
-
-    .search-container input {
-        width: 100%;
-        height: 1.3cm;
-        padding: 10px;
-        margin: 0px, 5px, 0px, 5px;
-        border-radius: 10px;
-        border: 0.1px solid #bec2c6;
-      }
-
-    .nav-menu ul {
-        list-style: none;
-    }
-
-    .nav-menu ul li {
-        margin-bottom: 0; 
+    * {
+        margin: 0.5px;
+        padding: 0.5px;
+        box-sizing: border-box;
     }
     
-    .nav-menu ul li:last-child a {
-        border-bottom: none; /* Loại bỏ gạch chân của phần tử cuối cùng */
+    body {
+        
+        background: linear-gradient(135deg, #618264, #B0d9b1, #ffffff);
+        background-size: 400% 400%;
+        animation: wave 10s ease infinite;
+        margin: 0;
+    }
+    main{
+        margin-top: 80px;
+    }
+    footer{
+        padding: 100px;
+        background-color: #ccc;
+    }
+    @keyframes wave {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+    h1 {
+        margin: 5px;
+        padding: 5px;
+    }
+    h2{
+        margin: 5px;
+        padding: 5px;
+    }
+    
+    /* Navbar */
+    .navbar {
+        position: fixed;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        padding: 10px;
+        /* background-color: aqua; */
+        background: linear-gradient(135deg, #6f926f, #B0d9b1);
+        background-size: 400% 400%;
+        /* animation: wave 10s ease infinite; Thêm hiệu ứng gợn sóng */
+        border-bottom: solid 1px rgb(255, 255, 255);
+        font-size: 25px;
+        height: 80px;
+        z-index: 100;
+        top: 0;
+        left: 0;
+    
+        margin: 0;
+        padding: 0;
+    
+    }
+    
+    .menu-icon {
+        font-size: 24px;
+        cursor: pointer;
+    }
+    
+    .search-bar {
+        width: 60%;
+        height: 25px;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc; 
+    }
+    
+    .logo {
+        font-size: 24px;
+        font-weight: bold;
+    }
+    
+    /* Category Section */
+    .category {
+        padding: 0px, 20px, 20px, 20px;
+    }
+    
+    .title {
+        display: inline-block; /* Thay đổi cách hiển thị */
+        padding: 1px; /* Padding trên và dưới là 10px, bên trái và bên phải là 0 */
+        font-size: 28px;
+        margin-bottom: 10px;
+        font-family: 'Georgia', serif;
+        text-align: center;
+        border-bottom: 1px solid white; /* Gạch chân */
+    }    
+    
+    /* =========================nav menu================================== */
+    
+    /* Ẩn menu theo mặc định */
+    .nav-menu {
+        margin-top: 78px;
+        position: fixed;
+        /* top: 70px; */
+        left: -100%;
+        width: 80%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        color: white;
+        display: flex;
+        flex-direction: column; 
+        justify-content: flex-start;
+        transition: left 0.3s ease;
+        z-index: 1000;
+        border-radius: 15px;
+    }
+    
+    /* Khi menu được mở */
+    .nav-menu.open {
+        left: 0;
+    }
+    
+    /* Danh sách menu */
+    .nav-menu ul {
+        margin-top: 50px;
+        margin-left: 25px;
+        list-style: none;
+        padding: 0;
+        text-align: left;
+    }
+    
+    .nav-menu ul li {
+        margin: 30px 0;
     }
     
     .nav-menu ul li a {
         text-decoration: none;
-        color: #333;
-        font-weight: bold;
-        padding: 15px 15px;
-        display: flex; /* Sử dụng flexbox để căn chỉnh văn bản giữa */
-        justify-content: left; /* Căn giữa theo chiều ngang */
-        align-items: center; /* Căn giữa theo chiều dọc */
-        transition: background-color 0.3s ease;
-        border-bottom: solid rgb(165, 165, 173) 1px;
-    }
-    .nav-menu ul li a:hover {
-        background-color: #f0f0f0;
-    }
-    .hotro{
-        text-decoration: none;
-        color: #333;
-        font-weight: bold;
-        padding: 15px 15px;
-        display: flex; /* Sử dụng flexbox để căn chỉnh văn bản giữa */
-        justify-content: left; /* Căn giữa theo chiều ngang */
-        align-items: center; /* Căn giữa theo chiều dọc */
-        transition: background-color 0.3s ease;
-        opacity: 0.5;
-        border-bottom: none;
-    }
-
-
-    .support {
-        display: flex; /* Sử dụng flexbox để căn chỉnh nội dung */
-        align-items: center; /* Căn giữa theo chiều dọc */
-        border-bottom: none;
-        width: 100%;
-    }
-    .nav-menu .support a {
-        border-bottom: none;
+        color: white;
+        font-size: 18px;
+        margin-left: 15px;
     }
     
-
-    .logo-container {
-        flex: 0 0 auto; /* Không co giãn, không co nhỏ */
-        background-color: #76c5bf;
-        margin-bottom:2px;
-      }
-      .logoImage{
-        border-radius: 50%;
-      }
-
-
-      header{
-        border-bottom: solid #76c5bf 1.5px;
-        margin-left: 0.7px;
-        margin-right: 0.5px;
-      }
-
-
-    /* Thiết kế body */
-    body {
-        margin-left: 0.5px;
-        margin-right: 0.5px;
-        font-family: Arial, Helvetica, sans-serif;
+    .menu-icon {
+        cursor: pointer;
+        font-size: 30px;
+        margin-left: 10px;
+    }
+    
+    .hidden {
+        display: none;
+    }
+    
+    .overlay {
+        position: fixed;
+        top: 0;
+        left: 80%; /* Chạy từ 80% màn hình */
+        width: 20%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0); /* Trong suốt */
+        display: none; /* Mặc định ẩn */
+        z-index: 999; /* Trên nội dung khác, nhưng dưới menu */
+    }
+    
+    /* Khi menu mở thì overlay hiển thị */
+    .nav-menu.open + .overlay {
+        display: block;
+    }
+    .support-title {
+        border-bottom: 1px solid white; /* Gạch chân */
+    }
+    
+    
+    /* =============================END nav menu------------------------------ */
+    }
+    /* Reset margin/padding */
+    html {
         margin: 0;
         padding: 0;
-    }
-
-    /* Thiết kế footer */
-    footer {
-        margin-left: 0.5px;
-        margin-right: 0.5px;
-        border-top: solid rgb(234, 216, 216) 0.55px;
-        text-align: center;
-        padding: 10px;
-    }
-}
-
-
+      }
+      
