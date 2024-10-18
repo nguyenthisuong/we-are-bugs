@@ -114,6 +114,31 @@ body {
     font-size: 18px;
 }
 
+/* 財務資訊區塊 */
+.financial-info {
+    margin-top: 30px;
+    text-align: center;
+    font-size: 22px;
+    color: #333;
+}
+
+/* 每一行 (売り上げ、利益) 使用 Flex 對齊 */
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+    line-height: 2.5;
+}
+
+/* Label 部分對齊 */
+.label {
+    width: 100px;
+    /* 固定寬度，確保標點對齊 */
+    text-align: right;
+    margin-right: 10px;
+}
+
 /* 手機螢幕設計 */
 @media (max-width: 767px) {
     .container {

@@ -49,7 +49,7 @@
             </button>
             <button class="menu-button">
                 <img src="./images/profile-icon.png" alt="プロフィール" class="icon">
-                <span>プロフィール</span>
+                <span>プロフ</span>
             </button>
         </div>
 
@@ -58,6 +58,18 @@
             <button id="prev-date" class="date-button">◀</button>
             <input type="date" id="date-picker" class="date-picker">
             <button id="next-date" class="date-button">▶</button>
+        </div>
+
+        <!-- 売上與利益顯示 -->
+        <div class="financial-info">
+            <div class="row">
+                <span class="label">売上：</span>
+                <span id="sales">_____________</span> ¥
+            </div>
+            <div class="row">
+                <span class="label">利益：</span>
+                <span id="profit">_____________</span> ¥
+            </div>
         </div>
     </div>
 
