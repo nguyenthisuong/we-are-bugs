@@ -48,7 +48,7 @@
                 <span>顧客</span>
             </button>
             <button class="menu-button">
-                <img src="./images/customer-icon.png" alt="プロフィール" class="icon">
+                <img src="./images/profile-icon.png" alt="プロフィール" class="icon">
                 <span>プロフィール</span>
             </button>
         </div>
