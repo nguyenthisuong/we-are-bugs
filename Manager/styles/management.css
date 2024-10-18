@@ -11,66 +11,71 @@ body {
 
 /* 容器樣式 */
 .container {
-    display: flex;
-    width: 80%;
-    max-width: 1200px;
-    height: 80%;
-    position: relative;
+    width: 100%;
+    max-width: 400px;
+    flex-direction: row-reverse;
+    text-align: center;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* 左侧菜單欄 */
 .menu {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    width: 220px;
-    height: 100%;
-    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin: 50px 0;
+    width: 100%;
+    height: 25%;
 }
 
 /* 按鈕設計 */
 .menu-button {
-    display: flex;
-    align-items: center;
-    background-color: #ffffff;
+    background-color: #f1f1f1;
     border: none;
-    border-radius: 16px;
-    padding: 15px 20px;
-    margin: 10px 0;
-    width: 100%;
+    border-radius: 8px;
+    padding: 10px;
     height: 100px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    font-size: 24px;
-    color: #333;
+    width: 100px;
     cursor: pointer;
-    transition: all 0.3s ease-in-out;
+
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.menu-button span {
+    font-size: 19px;
 }
 
 .menu-button:hover {
     background-color: #e8f5e9;
-    transform: translateX(5px); /* 增加轻微的滑动效果 */
+    transform: translateX(5px);
+    /* 增加轻微的滑动效果 */
 }
 
-/* 按鈕徒刑 */
+/* 按鈕圖形 */
 .icon {
     margin-right: 15px;
     width: 40px;
     height: 40px;
-    object-fit: contain; /* 防止圖片拉伸變形 */
+    object-fit: contain;
+    /* 防止圖片拉伸變形 */
 }
 
 /* Logo */
 .logo {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    text-align: right;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
 .logo h1 {
-    font-size: 36px;
+    font-style: italic;
     margin: 0;
-    font-weight: bold;
+    font-size: 50px;
     color: #333;
 }
 
@@ -81,11 +86,18 @@ body {
     color: #666;
 }
 
+/* 日期區 */
+.date {
+    margin: 10px 0;
+    font-size: 30px;
+    color: #333;
+}
+
 /* 手機螢幕設計 */
 @media (max-width: 767px) {
     .container {
-        width: 95%; 
-        height: 100%; 
+        width: 95%;
+        height: 100%;
     }
 
     .menu {
