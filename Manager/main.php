@@ -14,11 +14,17 @@ include('./php/auth_check.php');
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./styles/mainMgr.css">
     <link rel="stylesheet" href="./styles/management.css">
-    <title>Main Page</title>
+    <title>管理者画面</title>
 </head>
 
 <body>
     <div class="container">
+        <!-- ロゴ部分 -->
+        <div class="logo">
+            <h1>WRB</h1>
+            <p>Fashion & Boutique</p>
+        </div>
+
         <!-- 左側のボタンメニュー -->
         <div class="menu">
             <button class="menu-button">
@@ -41,14 +47,19 @@ include('./php/auth_check.php');
                 <img src="./images/customer-icon.png" alt="顧客" class="icon">
                 <span>顧客</span>
             </button>
+            <button class="menu-button">
+                <img src="./images/customer-icon.png" alt="プロフィール" class="icon">
+                <span>プロフィール</span>
+            </button>
         </div>
 
-        <!-- ロゴ部分 -->
-        <div class="logo">
-            <h1>WRB</h1>
-            <p>Fashion & Boutique</p>
+        <!-- 日期顯示 -->
+        <div class="date">
+            <span id="current-date"></span>
         </div>
     </div>
+
+    <script src="./scripts/date.js"></script>
 </body>
 
 </html>
