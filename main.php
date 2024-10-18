@@ -19,9 +19,9 @@
     </div>
     <nav class="nav-menu">
         <ul>
-          <li><a href="main.php">ホームページ</a></li>
-          <li><a href="#">商品</a></li>
-          <li><a href="#">お店について</a></li>
+          <li><a href="./main.php">ホームページ</a></li>
+          <li><a href="./html/product.php">商品</a></li>
+          <li><a href="./html/storeInfor.php">お店について</a></li>
           <li><a href="#">会員登録</a></li>
           <li><a href="#">ログイン</a></li>
           <li class="support-title">サポート</li>
@@ -74,6 +74,26 @@
     <div class="group" id="men">
         <h1 class="title">Men</h1>
         <div class="product-showcase">
+            <div class="product-content">
+                <img src="./images/product/1.jpg" alt="White Dress" />
+                <p class="rotated-text">White Dress<br>8000 ¥</p>
+            </div>
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Black Suit" />
+                <p class="rotated-text">Black Suit<br>12000 ¥</p>
+            </div>
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Blue Shirt" />
+                <p class="rotated-text">Blue Shirt<br>5000 ¥</p>
+            </div>
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Jacket" />
+                <p class="rotated-text">Jacket<br>15000 ¥</p>
+            </div>
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Jeans" />
+                <p class="rotated-text">Jeans<br>6000 ¥</p>
+            </div>
             <div class="product-content">
                 <img src="./images/facebook.png" alt="White Dress" />
                 <p class="rotated-text">White Dress<br>8000 ¥</p>
