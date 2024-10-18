@@ -3,7 +3,7 @@
 </script>
 <?php
 // Gọi file xác thực người dùng trước khi load nội dung trang
-// include('./php/auth_check.php');
+include('./php/auth_check.php');
 ?>
 
 <!DOCTYPE html>
@@ -27,7 +27,7 @@
 
         <!-- 左側のボタンメニュー -->
         <div class="menu">
-            <button class="menu-button">
+            <button class="menu-button" onclick="location.href='product.html'">
                 <img src="./images/product-icon.png" alt="商品" class="icon">
                 <span>商品</span>
             </button>
@@ -47,7 +47,7 @@
                 <img src="./images/customer-icon.png" alt="顧客" class="icon">
                 <span>顧客</span>
             </button>
-            <button class="menu-button">
+            <button class="menu-button" onclick="location.href='profileEdit.php'">
                 <img src="./images/profile-icon.png" alt="プロフィール" class="icon">
                 <span>プロフ</span>
             </button>
