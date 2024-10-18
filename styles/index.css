@@ -42,49 +42,10 @@
         padding: 5px;
     }
 
-    /* Navbar */
-    .navbar {
-        position: fixed;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 10px 20px;
-        padding: 10px;
-        /* background-color: aqua; */
-        background: linear-gradient(135deg, #6f926f, #B0d9b1);
-        background-size: 400% 400%;
-        /* animation: wave 10s ease infinite; Thêm hiệu ứng gợn sóng */
-        border-bottom: solid 1px rgb(255, 255, 255);
-        font-size: 25px;
-        height: 80px;
-        z-index: 100;
-        top: 0;
-        left: 0;
 
-        margin: 0;
-        padding: 0;
 
-    }
 
-    .menu-icon {
-        font-size: 24px;
-        cursor: pointer;
-    }
 
-    .search-bar {
-        width: 80%;
-        height: 35px;
-        padding: 10px;
-        border-radius: 8px;
-        border: 1px solid #ccc;
-        font-size: 18px;
-    }
-
-    .logo {
-        font-size: 24px;
-        font-weight: bold;
-    }
 
     /* Category Section */
     .category {
@@ -383,13 +344,6 @@
 html {
     margin: 0;
     padding: 0;
-}
-
-@media only screen and (max-width: 767px) {
-    .search-bar {
-        width: 90%;  /* 在小螢幕上佔據更大寬度 */
-        font-size: 16px;  /* 字體略小，以適應螢幕 */
-    }
 }
 
 
