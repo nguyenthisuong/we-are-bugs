@@ -1,14 +1,15 @@
 <?php
 
 // connect
-// $servername = "localhost";
-// $username = "dbuser";
-// $password = "ecc";
-// $dbname = "wearebugs";
 $servername = "localhost";
-$username = "se2a_24_bugs";
-$password = "X@7zERHL";
-$dbname = "se2a_24_bugs";
+$username = "dbuser";
+$password = "ecc";
+$dbname = "wearebugs";
+
+// $servername = "localhost";
+// $username = "se2a_24_bugs";
+// $password = "X@7zERHL";
+// $dbname = "se2a_24_bugs";
 $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     echo "SERVER NOT FOUND";
