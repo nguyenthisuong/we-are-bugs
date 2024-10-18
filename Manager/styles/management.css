@@ -84,10 +84,34 @@ body {
 }
 
 /* 日期區 */
-.date {
-    margin: 10px 0;
-    font-size: 30px;
-    color: #333;
+.date-control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    gap: 10px;
+}
+
+.date-button {
+    background-color: #f1f1f1;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 20px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+}
+
+.date-button:hover {
+    background-color: #e0e0e0;
+}
+
+.date-picker {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 18px;
 }
 
 /* 手機螢幕設計 */

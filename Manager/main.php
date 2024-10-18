@@ -54,9 +54,9 @@
         </div>
 
         <!-- 日期顯示 -->
-        <div class="date">
+        <div class="date-control">
             <button id="prev-date" class="date-button">◀</button>
-            <span id="current-date"></span>
+            <input type="date" id="date-picker" class="date-picker">
             <button id="next-date" class="date-button">▶</button>
         </div>
     </div>
