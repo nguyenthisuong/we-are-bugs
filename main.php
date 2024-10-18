@@ -12,11 +12,14 @@
 <body>
     <header>
         <!-- Navbar -->
-    <div class="navbar">
-        <div class="menu-icon">☰</div>
-        <input type="text" class="search-bar" placeholder="Search...">
-        <h1 class="logo">WRB</h1>
-    </div>
+        <div class="navbar">
+    <button class="menu-toggle" aria-label="Toggle navigation">
+        <span class="menu-icon"></span>
+    </button>
+    <input type="text" class="search-bar" placeholder="Search...">
+    <h1 class="logo">WRB</h1>
+</div>
+
     <nav class="nav-menu">
         <ul>
           <li><a href="./main.php">ホームページ</a></li>

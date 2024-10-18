@@ -370,3 +370,22 @@ html {
         font-size: 16px;  /* 字體略小，以適應螢幕 */
     }
 }
+
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px; /* Adjust size as needed */
+    cursor: pointer;
+}
+
+.menu-icon {
+    display: inline-block;
+}
+
+.menu-icon.open::before {
+    content: '✖'; /* X symbol */
+}
+
+.menu-icon::before {
+    content: '☰'; /* Hamburger icon */
+}

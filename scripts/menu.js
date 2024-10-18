@@ -1,19 +1,25 @@
 //nav===========================================================================
+
 document.addEventListener('DOMContentLoaded', function () {
-    const menuIcon = document.querySelector('.menu-icon');
+    const menuToggle = document.querySelector('.menu-toggle');
     const navMenu = document.querySelector('.nav-menu');
     const overlay = document.querySelector('.overlay');
+    const menuIcon = document.querySelector('.menu-icon');
 
-    // Mở menu khi nhấp vào biểu tượng menu
-    menuIcon.addEventListener('click', function () {
+    // Mở/đóng menu khi nhấp vào nút
+    menuToggle.addEventListener('click', function () {
         navMenu.classList.toggle('open');
+        menuIcon.classList.toggle('open'); // Thay đổi biểu tượng
     });
 
     // Đóng menu khi nhấp vào overlay
     overlay.addEventListener('click', function () {
         navMenu.classList.remove('open');
+        menuIcon.classList.remove('open'); // Đặt lại biểu tượng về ban đầu
     });
 });
+
+
 
 //showmore btn=======================================================================
 // Lấy tất cả các nút "Show More"

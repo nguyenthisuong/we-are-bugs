@@ -21,7 +21,7 @@
         <ul>
           <li><a href="../main.php">ホームページ</a></li>
           <li><a href="./html/product.php">商品</a></li>
-          <li><a href="#">お店について</a></li>
+          <li><a href="">お店について</a></li>
           <li><a href="#">会員登録</a></li>
           <li><a href="#">ログイン</a></li>
           <li class="support-title">サポート</li>
