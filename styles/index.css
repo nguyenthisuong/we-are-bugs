@@ -44,7 +44,7 @@ body {
     height: 25px;
     padding: 5px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: 1px solid #ccc; 
 }
 
 .logo {
@@ -120,9 +120,12 @@ body {
 }
 
 .product-content {
-    
     text-align: left;
     margin-bottom: 10px;
+    box-shadow: 5px 5px 15px rgba(168, 166, 166, 0.5); /* Đổ bóng */
+    border: solid 1px rgb(255, 255, 255);
+    border-radius: 15px;
+    background-color: white;
 }
 
 .product-content img {
@@ -156,7 +159,7 @@ body {
 /* Ẩn menu theo mặc định */
 .nav-menu {
     position: fixed;
-    top: 0;
+    /* top: 70px; */
     left: -100%;
     width: 80%;
     height: 100%;

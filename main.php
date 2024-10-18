@@ -6,6 +6,7 @@
     <title>WRB - Home</title>
     <link rel="stylesheet" href="./styles/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
 </head>
 <body>
     <!-- Navbar -->
@@ -26,7 +27,7 @@
           <li class="support"><i class="fa fa-envelope"></i><a class="support" href="mail:">srb@ecc.ac.jp</a></li>
           <li class="support"><i class="fa fa-map-marker"></i><a target="blank" class="support" href=""></a></li>
          </ul>
-       </nav>
+    </nav>
        <div class="overlay"></div>
 
        <div class="filter-buttons">
