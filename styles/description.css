@@ -1,0 +1,124 @@
+/* Global Styles */
+body {
+    height: 100vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(135deg, #618264, #b0d9b1, #ffffff);
+    background-size: 400% 400%;
+    animation: wave 10s ease infinite;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: #333;
+}
+
+/* Top Bar Styling */
+.top-bar {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+}
+
+.back-button img, .heart-icon img {
+    width: 25px; 
+    height: 25px;
+}
+
+.back-button img:hover, .heart-icon img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Image Styling */
+.image-container {
+    margin-top: 70px; /* To avoid overlapping with top bar */
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.image-container img {
+    width: 90%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Description Styling */
+.description {
+    margin-top: 20px;
+    max-width: 500px;
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.description h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.description .price {
+    font-size: 18px;
+    color: #27ae60;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.description p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Add to Cart Button Styling */
+.add-to-cart {
+    margin-top: 15px;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+.add-to-cart button {
+    background-color: #333;
+    color: white;
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart button:hover {
+    background-color: #27ae60;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .image-container img {
+        width: 100%;
+    }
+    .description h2 {
+        font-size: 18px;
+    }
+    .description p {
+        font-size: 14px;
+    }
+    .add-to-cart button {
+        width: 90%;
+    }
+}
