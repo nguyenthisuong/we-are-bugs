@@ -3,7 +3,7 @@
 </script>
 <?php
 // Gọi file xác thực người dùng trước khi load nội dung trang
-include('./php/auth_check.php');
+// include('./php/auth_check.php');
 ?>
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@ include('./php/auth_check.php');
         <!-- ロゴ部分 -->
         <div class="logo">
             <h1>WRB</h1>
-            <p>Fashion & Boutique</p>
+            <p>～Fashion & Boutique～</p>
         </div>
 
         <!-- 左側のボタンメニュー -->
@@ -48,14 +48,16 @@ include('./php/auth_check.php');
                 <span>顧客</span>
             </button>
             <button class="menu-button">
-                <img src="./images/customer-icon.png" alt="プロフィール" class="icon">
+                <img src="./images/profile-icon.png" alt="プロフィール" class="icon">
                 <span>プロフィール</span>
             </button>
         </div>
 
         <!-- 日期顯示 -->
-        <div class="date">
-            <span id="current-date"></span>
+        <div class="date-control">
+            <button id="prev-date" class="date-button">◀</button>
+            <input type="date" id="date-picker" class="date-picker">
+            <button id="next-date" class="date-button">▶</button>
         </div>
     </div>
 
