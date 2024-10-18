@@ -16,10 +16,18 @@ body {
 main{
     margin-top: 80px;
 }
+footer{
+    padding: 100px;
+    background-color: #ccc;
+}
 @keyframes wave {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
+}
+h1 {
+    margin: 5px;
+    padding: 5px;
 }
 
 /* Navbar */
@@ -30,6 +38,7 @@ main{
     justify-content: space-between;
     align-items: center;
     padding: 10px 20px;
+    padding: 10px;
     /* background-color: aqua; */
     background: linear-gradient(135deg, #6f926f, #B0d9b1);
     background-size: 400% 400%;
@@ -80,7 +89,7 @@ main{
 }
 
 
-
+/*================================= FILTERBUTTONS==============================================================*/
 
 /* Filter Buttons */
 .filter-buttons {
@@ -113,8 +122,8 @@ main{
     background-color: #000;
     color: #fff;
 }
-
-/*===============================================================================================*/
+/*=================================END FILTERBUTTONS==============================================================*/
+/*=================================PRODUCT SHOWCASE==============================================================*/
 
  /* Product Showcase */
 .product-showcase {
@@ -163,7 +172,7 @@ main{
 
 
 
-/*===============================================================================================*/
+/*========================================END PRODUCT SHOWCASE=======================================================*/
 
 
 /* =========================nav menu================================== */
@@ -305,7 +314,7 @@ main{
 
 
 /* Reset margin/padding */
-html, body {
+html {
     margin: 0;
     padding: 0;
   }
