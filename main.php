@@ -79,7 +79,7 @@
                 <p class="rotated-text">White Dress<br>8000 ¥</p>
             </div>
             <div class="product-content">
-                <img src="./images/facebook.png" alt="Black Suit" />
+                <img src="./images/product/2.jpg" alt="Black Suit" />
                 <p class="rotated-text">Black Suit<br>12000 ¥</p>
             </div>
             <div class="product-content">
@@ -161,10 +161,6 @@
             <div class="product-content">
                 <img src="./images/facebook.png" alt="Cap" />
                 <p class="rotated-text">Cap<br>2000 ¥</p>
-            </div>
-            <div class="product-content ">
-                <img src="./images/facebook.png" alt="Shoes" />
-                <p class="rotated-text">Shoes<br>5000 ¥</p>
             </div>
         </div>
         <button class="show-more-btn" data-group="child">Show More</button>
