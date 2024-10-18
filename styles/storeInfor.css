@@ -34,7 +34,7 @@
 .social-media {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    /* margin-top: 5px; */
 }
 
 .social-media a {
