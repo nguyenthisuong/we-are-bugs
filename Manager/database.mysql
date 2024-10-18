@@ -1,5 +1,5 @@
 root: 
-cretae database wearebugs;
+create database wearebugs;
 GRANT ALL PRIVILEGES ON wearebugs.* TO 'dbuser'@'localhost';
 
 dbuser:

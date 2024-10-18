@@ -1,0 +1,120 @@
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #618264, #B0d9b1, #ffffff);
+    background-size: 400% 400%;
+    animation: wave 10s ease infinite;
+    margin: 0;
+}
+
+@keyframes wave {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+
+/* Top Bar Styling */
+.top-bar {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 25px;
+    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    position: fixed;
+}
+
+.back-button img, .heart-icon img {
+    width: 25px; 
+    height: 25px;
+}
+
+.back-button img:hover, .heart-icon img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+/* Image Styling */
+.image-section {
+    margin-top: 70px; /* To avoid overlapping with top bar */
+    max-width: 500px;
+    width: 100%;
+    text-align: center;
+}
+
+.image-section img {
+    width: 200px;
+    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Description Styling */
+.description {
+    margin-top: 20px;
+    max-width: 500px;
+    width: 100%;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.description h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.description .price {
+    font-size: 18px;
+    color: #27ae60;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.description p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* Add to Cart Button Styling */
+.add-to-cart {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    text-align: center;
+}
+
+.add-to-cart button {
+    background-color: #333;
+    color: white;
+    font-size: 12px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.add-to-cart button:hover {
+    background-color: #27ae60;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .description h2 {
+        font-size: 18px;
+    }
+    .description p {
+        font-size: 14px;
+    }
+    .add-to-cart button {
+        width: 90%;
+    }
+}
