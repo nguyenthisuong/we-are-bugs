@@ -3,7 +3,7 @@
 </script>
 <?php
 // Gọi file xác thực người dùng trước khi load nội dung trang
-include('./php/auth_check.php');
+// include('./php/auth_check.php');
 ?>
 
 <!DOCTYPE html>
@@ -55,7 +55,9 @@ include('./php/auth_check.php');
 
         <!-- 日期顯示 -->
         <div class="date">
+            <button id="prev-date" class="date-button">◀</button>
             <span id="current-date"></span>
+            <button id="next-date" class="date-button">▶</button>
         </div>
     </div>
 
