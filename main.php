@@ -19,7 +19,7 @@
           <li><a href="main.php">ホームページ</a></li>
           <li><a href="#">商品</a></li>
           <li><a href="#">お店について</a></li>
-          <li><a href="#">登録</a></li>
+          <li><a href="#">会員登録</a></li>
           <li><a href="#">ログイン</a></li>
           <li class="support-title">サポート</li>
           <li class="support"><i class="fa fa-phone"></i><a class="support" href="tel">+81000000000000</a></li>
@@ -29,64 +29,123 @@
        </nav>
        <div class="overlay"></div>
 
-    <!-- Category Section -->
-    <section class="category">
-        <h1 class="title">Category</h1>
-        <div class="filter-buttons">
-            <button class="filter-button">All</button>
-            <button class="filter-button">Men</button>
-            <button class="filter-button active">Women</button>
-            <button class="filter-button">Children</button>
-            <button class="filter-button">Special Events</button>
-        </div>
+       <div class="filter-buttons">
+    <button class="filter-button" data-target="#men">Men</button>
+    <button class="filter-button" data-target="#women">Women</button>
+    <button class="filter-button" data-target="#child">Children</button>
+    <button class="filter-button">Special Events</button>
+</div>
 
-        <!-- Product Showcase -->
+<section class="best-sellers">
+    <h2>Best Sellers</h2>
+    <div class="slider">
+        <button class="arrow left">&#10094;</button>
+        <div class="product-grid">
+            <div class="product">
+                <img src="./images/facebook.png" alt="Facebook" />
+            </div>
+            <div class="product">
+                <img src="./images/top_button.png" alt="Top Button" />
+            </div>
+            <div class="product">
+                <img src="./images/twitter.png" alt="Twitter" />
+            </div>
+            <div class="product">
+                <img src="./images/twitter.png" alt="Twitter" />
+            </div>
+            <div class="product">
+                <img src="./images/twitter.png" alt="Twitter" />
+            </div>
+        </div>
+        <button class="arrow right">&#10095;</button>
+    </div>
+    <script src="./scripts/menubest.js"></script>
+</section>
+
+
+
+<section id="product-section" class="category">
+    <!-- Nhóm Men -->
+    <div class="group" id="men">
+        <h1 class="title">Men</h1>
         <div class="product-showcase">
             <div class="product-content">
                 <img src="./images/facebook.png" alt="White Dress" />
                 <p class="rotated-text">White Dress<br>8000 ¥</p>
             </div>
             <div class="product-content">
-                <img src="./images/facebook.png" alt="White Dress" />
-                <p class="rotated-text">White Dress<br>8000 ¥</p>
+                <img src="./images/facebook.png" alt="Black Suit" />
+                <p class="rotated-text">Black Suit<br>12000 ¥</p>
             </div>
             <div class="product-content">
-                <img src="./images/facebook.png" alt="White Dress" />
-                <p class="rotated-text">White Dress<br>8000 ¥</p>
+                <img src="./images/facebook.png" alt="Blue Shirt" />
+                <p class="rotated-text">Blue Shirt<br>5000 ¥</p>
             </div>
             <div class="product-content">
-                <img src="./images/facebook.png" alt="White Dress" />
-                <p class="rotated-text">White Dress<br>8000 ¥</p>
+                <img src="./images/facebook.png" alt="Jacket" />
+                <p class="rotated-text">Jacket<br>15000 ¥</p>
             </div>
             <div class="product-content">
-                <img src="./images/facebook.png" alt="White Dress" />
-                <p class="rotated-text">White Dress<br>8000 ¥</p>
-            </div>
-            <div class="product-content">
-                <img src="./images/facebook.png" alt="White Dress" />
-                <p class="rotated-text">White Dress<br>8000 ¥</p>
+                <img src="./images/facebook.png" alt="Jeans" />
+                <p class="rotated-text">Jeans<br>6000 ¥</p>
             </div>
         </div>
+        <button class="show-more-btn" data-group="men">Show More</button>
+    </div>
 
-        <h2 class="collection-title">Fall-Winter Collection</h2>
-    </section>
-
-    <!-- Best Sellers Section -->
-    <section class="best-sellers">
-        <h2>Best Sellers</h2>
-        <button class="view-all">View All</button>
-        <div class="product-grid">
-            <div class="product">
+    <!-- Nhóm Women -->
+    <div class="group" id="women">
+        <h1 class="title">Women</h1>
+        <div class="product-showcase">
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Red Dress" />
+                <p class="rotated-text">Red Dress<br>9000 ¥</p>
+            </div>
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Green Top" />
+                <p class="rotated-text">Green Top<br>7000 ¥</p>
+            </div>
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Yellow Skirt" />
+                <p class="rotated-text">Yellow Skirt<br>7500 ¥</p>
+            </div>
+            <div class="product-content">
                 <img src="./images/facebook.png" alt="Coat" />
+                <p class="rotated-text">Coat<br>10000 ¥</p>
             </div>
-            <div class="product">
-                <img src="./images/top_button.png" alt="Coat" />
-            </div>
-            <div class="product">
-                <img src="./images/twitter.png" alt="Coat" />
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Scarf" />
+                <p class="rotated-text">Scarf<br>3000 ¥</p>
             </div>
         </div>
-        <script src="./scripts/menu.js"></script>
-    </section>
+        <button class="show-more-btn" data-group="women">Show More</button>
+    </div>
+
+    <!-- Nhóm Child -->
+    <div class="group" id="child">
+        <h1 class="title">Child</h1>
+        <div class="product-showcase">
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="T-Shirt" />
+                <p class="rotated-text">T-Shirt<br>4000 ¥</p>
+            </div>
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Shorts" />
+                <p class="rotated-text">Shorts<br>3000 ¥</p>
+            </div>
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Cap" />
+                <p class="rotated-text">Cap<br>2000 ¥</p>
+            </div>
+            <div class="product-content ">
+                <img src="./images/facebook.png" alt="Shoes" />
+                <p class="rotated-text">Shoes<br>5000 ¥</p>
+            </div>
+        </div>
+        <button class="show-more-btn" data-group="child">Show More</button>
+    </div>
+</section>
+
+    <script src="./scripts/menu.js"></script>
 </body>
 </html>
