@@ -22,7 +22,7 @@
         <!-- ロゴ部分 -->
         <div class="logo">
             <h1>WRB</h1>
-            <p>Fashion & Boutique</p>
+            <p>～Fashion & Boutique～</p>
         </div>
 
         <!-- 左側のボタンメニュー -->
