@@ -56,6 +56,48 @@ showMoreBtns.forEach(button => {
             }
         });
     });
+//////////////////////////////////////////////////////////show more button/////////////////////////////////////
+document.addEventListener("DOMContentLoaded", function () {
+    const groups = document.querySelectorAll(".group");
+
+    groups.forEach((group) => {
+        const productShowcase = group.querySelector(".product-showcase");
+        const productContents = group.querySelectorAll(".product-content");
+        const showMoreButton = group.querySelector(".show-more-btn");
+
+        // Ẩn nút "Show More" nếu số sản phẩm <= 3
+        if (productContents.length <= 3) {
+            showMoreButton.style.display = "none";
+        } else {
+            // Chỉ hiển thị 3 sản phẩm ban đầu
+            productContents.forEach((product, index) => {
+                if (index >= 3) product.style.display = "none";
+            });
+
+            let isExpanded = false; // Trạng thái mở rộng
+
+            showMoreButton.addEventListener("click", () => {
+                if (isExpanded) {
+                    // Thu gọn: Loại bỏ class 'open'
+                    productShowcase.classList.remove("open");
+                    setTimeout(() => {
+                        // Ẩn các sản phẩm sau 3 sản phẩm sau khi hiệu ứng chạy xong
+                        productContents.forEach((product, index) => {
+                            if (index >= 3) product.style.display = "none";
+                        });
+                    }, 600); // Đợi 0.6s cho hiệu ứng chạy xong
+                    showMoreButton.textContent = "Show More";
+                } else {
+                    // Mở rộng: Hiển thị tất cả sản phẩm và thêm class 'open'
+                    productContents.forEach((product) => (product.style.display = "block"));
+                    productShowcase.classList.add("open");
+                    showMoreButton.textContent = "Show Less";
+                }
+                isExpanded = !isExpanded;
+            });
+        }
+    });
+});
 
 
 

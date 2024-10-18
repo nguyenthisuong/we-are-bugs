@@ -15,6 +15,29 @@
     <?php endforeach; ?>
 </section>
 
+<?php include 'products.php'; ?>
+
+<div class="product-container">
+    <?php foreach ($categories as $categoryName => $products): ?>
+        <div class="group" id="<?php echo $categoryName; ?>">
+            <h1 class="title"><?php echo ucfirst($categoryName); ?></h1>
+            <div class="product-showcase">
+                <?php foreach ($products as $product): ?>
+                    <div class="product-content">
+                        <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>">
+                        <p class="rotated-text">
+                            <?php echo $product['name']; ?><br><?php echo $product['price']; ?> ¥
+                        </p>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <?php if (count($products) > 3): ?>
+                <button class="show-more-btn" data-group="<?php echo $categoryName; ?>">Show More</button>
+            <?php endif; ?>
+        </div>
+    <?php endforeach; ?>
+</div>
+
 
 <!-- ----------------------------------------------------------- -->
 <section class="category">
