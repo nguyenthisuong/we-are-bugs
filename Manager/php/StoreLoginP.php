@@ -70,7 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             session_destroy();
             session_start();
             setcookie('username', $username, time() + (864000 * 30), "/"); //30day
-            setcookie('userid', $userid, time() + (864000 * 30), "/"); //30day
+            // setcookie('userid', $userid, time() + (864000 * 30), "/"); //30day
             setcookie('token', $token, time() + (8640000 * 30), "/");
             setcookie('loggedin', true, time() + (8640000 * 30), "/");
 
