@@ -1,5 +1,5 @@
 <?php
-
+//xóa coookie khi trang login dc khởi động
 if (isset($_COOKIE['username'])) {
     setcookie('username', '', time() - 86400, "/");
 }
