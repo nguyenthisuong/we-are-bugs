@@ -28,8 +28,8 @@ include('./php/storeinfo.php');
         <!-- form^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
         <form class="edit-form" action="./php/storeProEditP.php" method="POST">
     <div class="form">
-    <input type="hidden" name="userid" id="userid" value="<?php echo isset($_COOKIE['userid']) ? $_COOKIE['userid'] : ''; ?>">
-    <label for="shop-name">Tên cửa hàng</label>
+    <input type="hidden" name="userid" id="userid" value="<?php echo isset($_SESSION['userid']) ? $_SESSION['userid'] : ''; ?>">
+    <label for="shop-name">店名</label>
 <input type="text" id="shop-name" name="sname" value="<?php echo isset($_SESSION['sname']) ? htmlspecialchars($_SESSION['sname']) : ''; ?>" required>
 
 

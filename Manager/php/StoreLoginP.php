@@ -67,11 +67,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['storeid'] = $storeid; // Lưu storeid
         }    
             // session 開始
+            session_destroy();
             session_start();
             setcookie('username', $username, time() + (864000 * 30), "/"); //30day
+            setcookie('userid', $userid, time() + (864000 * 30), "/"); //30day
             setcookie('token', $token, time() + (8640000 * 30), "/");
             setcookie('loggedin', true, time() + (8640000 * 30), "/");
 
+            $_SESSION['username'] = $username; // Lưu ID người dùng
             $_SESSION['userid'] = $userid; // Lưu ID người dùng
             $_SESSION['mail'] = $mail; // Lưu địa chỉ email
             $_SESSION['storeid'] = $storeid; // Lưu storeid
