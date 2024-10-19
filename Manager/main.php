@@ -71,7 +71,11 @@ include('./php/auth_check.php');
                 <span id="profit">_____________</span> ¥
             </div>
         </div>
+        <div class="logout-container">
+        <a href="./php/log_out.php" class="logout-button">Log Out</a>
     </div>
+    </div>
+
 
     <script src="./scripts/date.js"></script>
 </body>
