@@ -1,3 +1,19 @@
+
+xóa cookie ở màn hình cửa hàng
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <section id="product-section" class="category">
     <?php foreach ($groupedProducts as $categoryId => $products): ?>
         <div class="group" id="category-<?php echo $categoryId; ?>">
