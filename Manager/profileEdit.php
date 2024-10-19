@@ -1,6 +1,7 @@
 <?php
 // Gọi file xác thực người dùng trước khi load nội dung trang
 include('./php/auth_check.php');
+include('./php/storeinfo.php');
 ?>
 <!DOCTYPE html>
 <html lang="ja">
@@ -28,14 +29,15 @@ include('./php/auth_check.php');
         <form class="edit-form" action="./php/storeProEditP.php" method="POST">
     <div class="form">
     <input type="hidden" name="userid" id="userid" value="<?php echo isset($_COOKIE['userid']) ? $_COOKIE['userid'] : ''; ?>">
-        <label for="shop-name">店名</label>
-        <input type="text" id="shop-name" name="sname" required>
+    <label for="shop-name">Tên cửa hàng</label>
+<input type="text" id="shop-name" name="sname" value="<?php echo isset($_SESSION['sname']) ? htmlspecialchars($_SESSION['sname']) : ''; ?>" required>
+
 
         <label for="address">住所</label>
-        <input type="text" id="address" name="address" required>
+        <input type="text" id="address" name="address"value="<?php echo isset($_SESSION['address']) ? htmlspecialchars($_SESSION['address']) : ''; ?>" required>
 
         <label for="phone">電話</label>
-        <input type="text" id="phone" name="phone" required >
+        <input type="text" id="phone" name="phone" value="<?php echo isset($_SESSION['tel']) ? htmlspecialchars($_SESSION['tel']) : ''; ?>" required >
     </div>
     
     <div class="save">

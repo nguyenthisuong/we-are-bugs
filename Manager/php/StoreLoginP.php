@@ -30,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute();
     $result = $stmt->get_result();
 
+    // 存在しない
     if ($result->num_rows === 0) {
-        // 存在しない
         header("Location: ../StoreLogin.php?error=username_not_found&username=" . urlencode($username));
         exit();
     } else {
@@ -41,7 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stored_password = $user['password']; 
         $userid = $user["userid"];
         $mail = $user["mail"]; // Lấy địa chỉ email từ cơ sở dữ liệu
-        $storeid = $user["storeid"]; // Lấy storeid nếu có trong bảng user (bạn cần đảm bảo cột này tồn tại)
 
 
         // password check
@@ -53,6 +52,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
              $stmt = $conn->prepare($update_token_sql);
              $stmt->bind_param("si", $token, $userid);
              $stmt->execute();
+
+                     // Truy vấn thông tin cửa hàng dựa trên userid
+            $store_sql = "SELECT * FROM store WHERE userid = ?";
+            $stmt = $conn->prepare($store_sql);
+            $stmt->bind_param("i", $userid);
+            $stmt->execute();
+            $store_result = $stmt->get_result();
+        // Lấy thông tin cửa hàng
+        if ($store_result->num_rows > 0) {
+            $store = $store_result->fetch_assoc();
+            $storeid = $store["storeid"];
+            // Lưu thông tin cửa hàng vào session
+            $_SESSION['storeid'] = $storeid; // Lưu storeid
+        }    
             // session 開始
             session_start();
             setcookie('username', $username, time() + (864000 * 30), "/"); //30day
