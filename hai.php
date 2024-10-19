@@ -1,5 +1,9 @@
 
+l
+
 xóa cookie ở màn hình cửa hàng
+
+so sánh 2 password khi đăng ký
 
 
 

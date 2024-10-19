@@ -88,7 +88,7 @@ $conn->close();
     <nav class="nav-menu">
         <ul>
         <li><h3><?php echo $sname; ?></h3></li>
-          <li><a href="./main.php">ホームページ</a></li>
+          <li><a href="./main.php?sname=<?php echo $_GET['sname']  ?>">ホームページ</a></li>
           <li><a href="./html/product.php">商品</a></li>
           <li><a href="./html/storeInfor.php">お店について</a></li>
           <li><a href="#">会員登録</a></li>
