@@ -81,3 +81,7 @@
 <button class="show-more-btn">Show More</button>
 <h2 class="collection-title">Fall-Winter Collection</h2>
 </section>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.7/lottie.min.js"></script>

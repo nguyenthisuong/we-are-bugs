@@ -11,6 +11,7 @@ include('./php/auth_check.php');
     <title>プロフィール</title>
     <link rel="stylesheet" href="./styles/profile.css">
     <script src="./scripts/profile.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.7/lottie.min.js"></script>
 </head>
 
 <body>
@@ -24,7 +25,7 @@ include('./php/auth_check.php');
             <input type="file" id="avatar-input" accept="image/*">
         </div>
         <!-- form^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^ -->
-        <form action="./php/storeProEditP.php" method="POST">
+        <form class="edit-form" action="./php/storeProEditP.php" method="POST">
     <div class="form">
     <input type="hidden" name="userid" id="userid" value="<?php echo isset($_COOKIE['userid']) ? $_COOKIE['userid'] : ''; ?>">
         <label for="shop-name">店名</label>
@@ -44,6 +45,38 @@ include('./php/auth_check.php');
     </div>
 </form>
     </div>
+    <!-- loading -->
+
+    <div id="loading" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.8); justify-content: center; align-items: center;">
+        <div id="lottie"></div>
+        </div>
+        <script>
+    // Lottie 起動
+    document.addEventListener('DOMContentLoaded', function () {
+// Lottie
+const animation = lottie.loadAnimation({
+container: document.getElementById('lottie'),
+renderer: 'svg',
+loop: true,
+autoplay: true,
+path: './images/loading.json' 
+});
+
+// animation
+document.querySelector('.edit-form').addEventListener('submit', function (event) {
+// 
+event.preventDefault();
+document.getElementById('loading').style.display = 'flex';
+
+// set time animation
+setTimeout(() => {
+    this.submit();
+}, 1500); 
+});
+});
+</script>
+
+        <!-- loading -->
 </body>
 
 </html>
