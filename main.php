@@ -30,11 +30,13 @@ $storeName = $_GET['sname'];
 $tel = null;
 $address = null;
 $mail = null;
+$sname = null;
 
 // Thực hiện truy vấn để lấy dữ liệu cửa hàng và thông tin người dùng
-$query = "SELECT store.*, user.mail FROM store 
+$query = "SELECT store.sname, store.tel, store.address, user.mail FROM store 
           JOIN user ON store.userid = user.userid 
           WHERE store.sname = ?";
+
 $stmt = $conn->prepare($query);
 $stmt->bind_param("s", $storeName); // Ràng buộc tham số
 $stmt->execute();
@@ -44,6 +46,7 @@ $result = $stmt->get_result(); // Lấy kết quả truy vấn
 if ($result->num_rows > 0) {
     $storeData = $result->fetch_assoc(); // Lấy dữ liệu dưới dạng mảng kết hợp
     // Hiển thị dữ liệu cửa hàng
+    $sname = $storeData["sname"];
     $tel = $storeData["tel"];
     $address = $storeData["address"];
     $mail = $storeData["mail"]; // Lấy email từ bảng user
@@ -84,6 +87,7 @@ $conn->close();
 
     <nav class="nav-menu">
         <ul>
+        <li><h3><?php echo $sname; ?></h3></li>
           <li><a href="./main.php">ホームページ</a></li>
           <li><a href="./html/product.php">商品</a></li>
           <li><a href="./html/storeInfor.php">お店について</a></li>
@@ -93,7 +97,7 @@ $conn->close();
           <li class="support"><i class="fa fa-phone"></i><a class="support" href="tel:<?php echo $tel; ?>"><?php echo $tel; ?></a></li>
 
           <li class="support"><i class="fa fa-envelope"></i><a class="support" href="mail:"><?php echo $mail; ?></a></li>
-          <li class="support"><i class="fa fa-map-marker"></i><a target="blank" class="support" href=""></a></li>
+          <li class="support"><i class="fa fa-map-marker"></i><a target="blank" class="support" href=""><?php echo $address; ?></a></li>
          </ul>
     </nav>
        <div class="overlay"></div>
