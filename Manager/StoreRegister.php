@@ -29,6 +29,11 @@
             <?php endif; ?>
             <input type="text" id="username" name="username" placeholder="ユーザー名入力" required value="<?= isset($_GET['username']) ? htmlspecialchars($_GET['username']) : '' ?>" >
 
+            <?php if (isset($_GET['error']) && $_GET['error'] == 'sname_exists'): ?>
+            <span style="color: red;">店名が既に存在します！</span> 
+            <?php endif; ?>
+            <label for="sname"></label>
+            <input type="text" id="sname" name="sname" placeholder="店名を入力" required value="<?= isset($_GET['sname']) ? htmlspecialchars($_GET['sname']) : '' ?>" >
 
             <?php if (isset($_GET['error']) && $_GET['error'] == 'email_exists'): ?>
             <span style="color: red;">既に登録しているメールです！</span> 
