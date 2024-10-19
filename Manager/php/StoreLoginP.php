@@ -40,6 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //user data 取得
         $stored_password = $user['password']; 
         $userid = $user["userid"];
+        $mail = $user["mail"]; // Lấy địa chỉ email từ cơ sở dữ liệu
+        $storeid = $user["storeid"]; // Lấy storeid nếu có trong bảng user (bạn cần đảm bảo cột này tồn tại)
+
 
         // password check
         if ($password === $stored_password) {
@@ -52,11 +55,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
              $stmt->execute();
             // session 開始
             session_start();
-            $_SESSION['userid'] = $userid; 
-            setcookie('userid', $userid, time() + (864000 * 30), "/"); // 30 days
             setcookie('username', $username, time() + (864000 * 30), "/"); //30day
             setcookie('token', $token, time() + (8640000 * 30), "/");
             setcookie('loggedin', true, time() + (8640000 * 30), "/");
+
+            $_SESSION['userid'] = $userid; // Lưu ID người dùng
+            $_SESSION['mail'] = $mail; // Lưu địa chỉ email
+            $_SESSION['storeid'] = $storeid; // Lưu storeid
+            $_SESSION['last_activity'] = time(); // Lưu thời gian hoạt động cuối cùng
             //page 移動
             header("Location: ../main.php");
             exit();
