@@ -14,7 +14,7 @@ if ($conn->connect_error) {
 // Kiểm tra phương thức POST
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $userid = (int) $_POST['userid']; // Lấy userid từ form
-    $sname = $conn->real_escape_string($_POST['sname']);
+    // $sname = $conn->real_escape_string($_POST['sname']);
     $address = $conn->real_escape_string($_POST['address']);
     $tel = $conn->real_escape_string($_POST['phone']);
 
@@ -40,9 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     if ($result->num_rows > 0) {
         // Nếu có, thực hiện UPDATE
-        $update_sql = "UPDATE store SET sname = ?, address = ?, tel = ? WHERE userid = ?";
+        $update_sql = "UPDATE store SET address = ?, tel = ? WHERE userid = ?";
         $stmt = $conn->prepare($update_sql);
-        $stmt->bind_param("sssi", $sname, $address, $tel, $userid);
+        $stmt->bind_param("ssi", $address, $tel, $userid);
 
         if ($stmt->execute()) {
             // echo "Cập nhật thành công";
@@ -52,9 +52,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     } else {
         // Nếu không có, thực hiện INSERT
-        $insert_sql = "INSERT INTO store (userid, sname, address, tel) VALUES (?, ?, ?, ?)";
+        $insert_sql = "INSERT INTO store (userid, address, tel) VALUES (?, ?, ?)";
         $stmt = $conn->prepare($insert_sql);
-        $stmt->bind_param("isss", $userid, $sname, $address, $tel);
+        $stmt->bind_param("iss", $userid, $address, $tel);
 
         if ($stmt->execute()) {
             // echo "Thêm thành công";

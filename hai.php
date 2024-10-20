@@ -1,6 +1,6 @@
 
 l
-
+ko cho sửa tên sname ở Edit
 mỗi lần tạo page mới phải include
 xóa cookie ở màn hình cửa hàng
 

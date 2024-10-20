@@ -45,8 +45,16 @@ include('./php/storeinfo.php');
             <img src="./images/signupBtn.png" alt="save">
         </button>
     </div>
+    <div>
+    <a href="http://localhost/we%20are/main.php?sname=<?php echo isset($_SESSION['sname']) ? htmlspecialchars($_SESSION['sname']) : ''; ?>" target="_blank" rel="noopener noreferrer">
+        ストアのリンクアドレス
+    </a>
+</div>
+
 </form>
     </div>
+
+    
     <!-- loading -->
 
     <div id="loading" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(255, 255, 255, 0.8); justify-content: center; align-items: center;">
