@@ -16,6 +16,8 @@ scp -i "C:\Sites\ec2\haikey2.pem" -r "C:\Sites\we are" ubuntu@54.145.40.61:/var/
 
 ssh -i "haikey2.pem" ubuntu@54.145.40.61
 
+git pull origin main
+
 
 
 
