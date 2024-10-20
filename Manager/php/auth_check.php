@@ -1,42 +1,46 @@
 <?php
 session_start();
+
+// Thông tin kết nối cơ sở dữ liệu
 $servername = "localhost";
 $username = "dbuser";
 $password = "ecc";
 $dbname = "wearebugs";
 
-// $servername = "localhost";
-// $username = "se2a_24_bugs";
-// $password = "X@7zERHL";
-// $dbname = "se2a_24_bugs";
-
+// Tạo kết nối
 $conn = new mysqli($servername, $username, $password, $dbname);
+
+// Kiểm tra kết nối
 if ($conn->connect_error) {
-    echo "SERVER NOT FOUND";
-    exit();
+    die("SERVER NOT FOUND"); // Sử dụng die() để dừng thực thi nếu kết nối lỗi
 }
 
-// Kiểm tra session hoặc cookie token
+// Kiểm tra sự tồn tại của cookie
 if (isset($_COOKIE['username']) && isset($_COOKIE['token'])) {
     $user_id = $_COOKIE['username'];
     $token = $_COOKIE['token'];
 
+    // Chuẩn bị và thực hiện truy vấn
     $sql = "SELECT * FROM user WHERE username = ? AND token = ?";
     $stmt = $conn->prepare($sql);
-    $stmt->bind_param("is", $user_id, $token);
+
+    // Sửa kiểu dữ liệu thành 'ss' vì cả username và token đều là chuỗi
+    $stmt->bind_param("ss", $user_id, $token);
     $stmt->execute();
     $result = $stmt->get_result();
 
     if ($result->num_rows === 0) {
-        // Token không hợp lệ, chuyển về đăng nhập
+        // Nếu token không hợp lệ, chuyển về trang đăng nhập
         header("Location: StoreLogin.php?error=invalid_token");
-        exit(); // Dừng thực thi mã HTML sau khi chuyển hướng
+        exit();
     }
+
+    // Đóng tài nguyên
     $stmt->close();
     $conn->close();
 } else {
-    // Nếu không có session hoặc cookie, chuyển về đăng nhập
+    // Nếu không có cookie, chuyển về trang đăng nhập
     header("Location: StoreLogin.php?error=auth_check");
-    exit(); // Dừng thực thi mã HTML sau khi chuyển hướng
+    exit();
 }
 ?>
