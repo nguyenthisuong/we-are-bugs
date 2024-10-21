@@ -14,6 +14,8 @@ icacls haikey2.pem /grant:r "${env:USERNAME}:(R)"
 
 scp -i "C:\Sites\ec2\haikey2.pem" -r "C:\Sites\we are" ubuntu@54.145.40.61:/var/www/html
 
+cd "C:\Sites\ec2\"
+
 ssh -i "haikey2.pem" ubuntu@54.145.40.61
 
 git pull origin main
