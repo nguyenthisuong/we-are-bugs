@@ -46,7 +46,7 @@ include('./php/storeinfo.php');
         </button>
     </div>
     <div>
-    <a href="http://localhost/we%20are/main.php?sname=<?php echo isset($_SESSION['sname']) ? htmlspecialchars($_SESSION['sname']) : ''; ?>" target="_blank" rel="noopener noreferrer">
+    <a href="../main.php?sname=<?php echo isset($_SESSION['sname']) ? htmlspecialchars($_SESSION['sname']) : ''; ?>" target="_blank" rel="noopener noreferrer">
         ストアのリンクアドレス
     </a>
 </div>
