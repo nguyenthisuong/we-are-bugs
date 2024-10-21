@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $result = $stmt->get_result();
 
     if ($result->num_rows === 0) {
-        echo "Lỗi: user không tồn tại.";
+        header("Location: ../error.php?uname_not_exist");
         exit();
     }
 
@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // echo "Cập nhật thành công";
             header("Location: ../main.php");
         } else {
-            echo "Lỗi: " . $stmt->error;
+            header("Location: ../error.php?updateerror");
         }
     } else {
         // Nếu không có, thực hiện INSERT
@@ -60,7 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // echo "Thêm thành công";
             header("Location: ../main.php");
         } else {
-            echo "Lỗi: " . $stmt->error;
+            header("Location: ../error.php?storeProEditP");
         }
     }
 
