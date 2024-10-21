@@ -73,12 +73,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // setcookie('userid', $userid, time() + (864000 * 30), "/"); //30day
             setcookie('token', $token, time() + (8640000 * 30), "/");
             setcookie('loggedin', true, time() + (8640000 * 30), "/");
-
-            $_SESSION['username'] = $username; // Lưu ID người dùng
-            $_SESSION['userid'] = $userid; // Lưu ID người dùng
-            $_SESSION['mail'] = $mail; // Lưu địa chỉ email
-            $_SESSION['storeid'] = $storeid; // Lưu storeid
-            $_SESSION['last_activity'] = time(); // Lưu thời gian hoạt động cuối cùng
+//đã làm ở authcheck nên ko cần ở đaay
+            // $_SESSION['username'] = $username; // Lưu ID người dùng
+            // $_SESSION['userid'] = $userid; // Lưu ID người dùng
+            // $_SESSION['mail'] = $mail; // Lưu địa chỉ email
+            // $_SESSION['storeid'] = $storeid; // Lưu storeid
+            // $_SESSION['last_activity'] = time(); // Lưu thời gian hoạt động cuối cùng
             //page 移動
             header("Location: ../main.php");
             exit();
