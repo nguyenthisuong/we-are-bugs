@@ -40,7 +40,7 @@
 <body>
 
     <h1>エラーが発生しました。</h1>
-    <div class="error-message">
+    <div class="2error-message">
         <?php
             // Lấy thông báo lỗi từ URL
             if (isset($_GET['error'])) {
@@ -51,7 +51,7 @@
         ?>
     </div>
     
-    <a href="./StoreLogin.php" class="home-link">ホームページに戻る</a>
+    <a href="./StoreLogin.php" class="home-link">ログインに戻る</a>
 
 </body>
 </html>
