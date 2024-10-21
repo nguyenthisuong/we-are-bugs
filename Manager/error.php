@@ -47,13 +47,11 @@
                 // Giải mã thông báo lỗi để tránh tấn công XSS
                 $error = htmlspecialchars($_GET['error']);
                 echo $error;
-            } else {
-                echo "エラーなし";
             }
         ?>
     </div>
     
-    <a href="main.php" class="home-link">ホームページに戻る</a>
+    <a href="./StoreLogin.php" class="home-link">ホームページに戻る</a>
 
 </body>
 </html>

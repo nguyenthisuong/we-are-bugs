@@ -6,7 +6,7 @@ xóa cookie ở màn hình cửa hàng
 
 so sánh 2 password khi đăng ký
 
-
+sau khi đăng nhập->so sánh và tạo token lưu vao cookie, khi vào màn hình authcheck-> lấy dữ liệu vào session
 
 ubuntu:
 icacls haikey2.pem /inheritance:r

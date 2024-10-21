@@ -33,12 +33,12 @@ if (isset($_SESSION['storeid'])) {
         $_SESSION['description'] = $store['description']; // Mô tả
         // Có thể thêm thông tin khác nếu cần
     } else {
-        echo "Store not found.";
+        header("Location: ./error.php?storeinfo36");
     }
 
     $stmt->close();
 } else {
-    echo "Store ID not found in session.";
+    header("Location: ./error.php?StoreIDnotfoundinsession");
 }
 
 $conn->close();
