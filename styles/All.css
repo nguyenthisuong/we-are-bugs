@@ -102,6 +102,7 @@
     /* Khi menu được mở */
     .nav-menu.open {
         left: 0;
+        margin-left: 0;
     }
     
     /* Danh sách menu */
