@@ -56,6 +56,11 @@
             <input type="number" id="stockQuantity" name="stockQuantity" required min="0">
             <br>
 
+            <!-- Tên sản phẩm -->
+            <label for="barcode">バーコード:</label>
+            <input type="text" id="barcode" name="barcode" required>
+            <br>
+
             <button type="submit">商品を追加する</button>
         </form>
     </div>

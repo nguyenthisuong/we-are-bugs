@@ -34,6 +34,7 @@ CREATE TABLE product (
     costPrice DECIMAL(10, 2) NOT NULL,
     description TEXT,
     stock_quantity INT NOT NULL,
+    barcode VARCHAR(13) UNIQUE NOT NULL,
     FOREIGN KEY (storeid) REFERENCES store(storeid),
     FOREIGN KEY (category_id) REFERENCES category(category_id)
 );
