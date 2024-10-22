@@ -25,5 +25,26 @@ CREATE TABLE store (
     ON DELETE CASCADE 
 );
 
+CREATE TABLE product (
+    productid INT PRIMARY KEY AUTO_INCREMENT,
+    storeid INT,
+    category_id INT,
+    pname VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    costPrice DECIMAL(10, 2) NOT NULL,
+    description TEXT,
+    stock_quantity INT NOT NULL,
+    FOREIGN KEY (storeid) REFERENCES store(storeid),
+    FOREIGN KEY (category_id) REFERENCES category(category_id)
+);
+
+
+CREATE TABLE category (
+    category_id INT PRIMARY KEY AUTO_INCREMENT,
+    cname VARCHAR(100) NOT NULL
+);
+
+
+
 
 GRANT ALL PRIVILEGES ON wearebugs.* TO 'dbuser'@'localhost';

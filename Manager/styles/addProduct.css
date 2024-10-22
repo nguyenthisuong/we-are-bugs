@@ -1,0 +1,72 @@
+/* Tổng thể */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+/* Container của form */
+.addContainer {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 10px;
+    max-width: 76%;
+    max-height: 30%;
+    margin: 0 auto;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Tiêu đề */
+h3 {
+    text-align: center;
+    color: #333;
+    font-size: 35px;
+}
+
+/* Nhãn và trường nhập */
+label {
+    font-weight: bold;
+    margin-top: 3x;
+    display: block;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 5px;
+    margin: 2px 0 2px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Đảm bảo padding không làm tăng kích thước tổng thể */
+}
+
+/* Nút submit */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+    margin-top: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Hiển thị ảnh preview */
+img#imagePreview {
+    display: none;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    max-width: 100%;
+}
