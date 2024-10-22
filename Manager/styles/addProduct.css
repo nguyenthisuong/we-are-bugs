@@ -70,3 +70,15 @@ img#imagePreview {
     border-radius: 4px;
     max-width: 100%;
 }
+
+/* //////////////barcode/////////////////////// */
+#barcode-scanner {
+    width: 100%; /* Hoặc chiều rộng cụ thể */
+    height: 300px; /* Hoặc chiều cao cụ thể */
+    display: none; /* Ẩn khi không sử dụng */
+    background-color: black;
+}
+
+#start-scan {
+    margin-left: 10px;
+}

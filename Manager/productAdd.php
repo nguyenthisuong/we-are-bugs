@@ -7,6 +7,7 @@
     <title>Document</title>
     <link rel="stylesheet" href="./styles/addProduct.css">
     <link rel="stylesheet" href="../styles/All.css">
+    <script src="https://unpkg.com/html5-qrcode"></script>
 </head>
 <body>
     <header>
@@ -59,7 +60,56 @@
             <!-- Tên sản phẩm -->
             <label for="barcode">バーコード:</label>
             <input type="text" id="barcode" name="barcode" required>
-            <br>
+            <button type="button" id="start-scan">カメラでスキャン</button>
+            <!-- Div để hiển thị camera -->
+    <div id="barcode-scanner" style="display : none;"></div>
+
+<script>
+    const startScanButton = document.getElementById('start-scan');
+    const barcodeInput = document.getElementById('barcode');
+    const scannerDiv = document.getElementById('barcode-scanner');
+    let html5QrcodeScanner;
+
+    // Bắt đầu hoặc dừng quét camera
+    startScanButton.addEventListener('click', () => {
+        if (scannerDiv.style.display === 'none') {
+            scannerDiv.style.display = 'block';
+            startCamera();
+            startScanButton.textContent = '停止';  // Nút đổi thành "Dừng"
+        } else {
+            stopCamera();
+            startScanButton.textContent = 'カメラでスキャン';  // Nút đổi thành "Bật Camera"
+        }
+    });
+
+    // Khởi động camera và quét mã barcode
+    function startCamera() {
+        html5QrcodeScanner = new Html5QrcodeScanner(
+            "barcode-scanner", { fps: 10, qrbox: 250 });
+
+        html5QrcodeScanner.render(onScanSuccess, onScanError);
+    }
+
+    // Xử lý khi quét thành công
+    function onScanSuccess(decodedText) {
+        barcodeInput.value = decodedText;  // Gán mã barcode vào input
+        stopCamera();  // Tự động dừng sau khi quét thành công
+        startScanButton.textContent = 'カメラでスキャン';
+    }
+
+    // Xử lý lỗi trong quá trình quét (tùy chọn)
+    function onScanError(error) {
+        console.warn(`Scan error: ${error}`);
+    }
+
+    // Dừng camera
+    function stopCamera() {
+        if (html5QrcodeScanner) {
+            html5QrcodeScanner.clear().catch(error => console.error('Stop failed.', error));
+        }
+        scannerDiv.style.display = 'none';
+    }
+</script>
 
             <button type="submit">商品を追加する</button>
         </form>
