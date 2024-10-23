@@ -22,6 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = $conn->real_escape_string($_POST['username']);
     $password = $conn->real_escape_string($_POST['password']);
     $email = $conn->real_escape_string($_POST['email']);
+    $sname = $conn->real_escape_string($_POST['sname']);
 
     // username 存在かどうか
     $check_sql = "SELECT * FROM user WHERE username = ?";
@@ -36,36 +37,58 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         exit();
     }
-        // email 存在かどうか
-        $check_email_sql = "SELECT * FROM user WHERE mail = ?";
-        $stmt = $conn->prepare($check_email_sql);
-        $stmt->bind_param("s", $email);
-        $stmt->execute();
-        $result = $stmt->get_result();
-    
-        if ($result->num_rows > 0) {
-            // 存在場合
-            // header("Location: ../StoreRegister.php?error=email_exists");
-            header("Location: ../StoreRegister.php?error=email_exists&username=" . urlencode($username) . "&email=" . urlencode($email));
+    // sname 存在かどうか
+    $check_sname_sql = "SELECT * FROM store WHERE sname = ?";
+    $stmt = $conn->prepare($check_sname_sql);
+    $stmt->bind_param("s", $sname);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        // 存在場合 - Nếu sname đã tồn tại
+        header("Location: ../StoreRegister.php?error=sname_exists&username=" . urlencode($username) . "&sname=" . urlencode($sname) . "&email=" . urlencode($email));
+        exit();
+    }
+
+    // email 存在かどうか
+    $check_email_sql = "SELECT * FROM user WHERE mail = ?";
+    $stmt = $conn->prepare($check_email_sql);
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        // 存在場合
+        // header("Location: ../StoreRegister.php?error=email_exists");
+        header("Location: ../StoreRegister.php?error=email_exists&username=" . urlencode($username) . "&email=" . urlencode($email));
+        exit();
+    }
+// ---------------------------------------- INSERT -----------------------------------------------------------
+        $sql = "INSERT INTO user (username, password, mail) VALUES (?, ?, ?)";
+        $stmt = $conn->prepare($sql);
+        $stmt->bind_param("sss", $username, $password, $email);
+        if ($stmt->execute()) {
+            // FLAG　保存する
+            $userid = $stmt->insert_id; // Lấy ID của bản ghi mới
+                //inssert store
+            $insert_store_sql = "INSERT INTO store (sname, userid) VALUES (?, ?)";
+            $stmt = $conn->prepare($insert_store_sql);
+            $stmt->bind_param("si", $sname, $userid); // Giả định `owner` là username
+            if (!$stmt->execute()) {
+            echo "insert store ERROR";
             exit();
-        }
-        else {
-            // INSERT 
-            $sql = "INSERT INTO user (username, password, mail) VALUES (?, ?, ?)";
-            $stmt = $conn->prepare($sql);
-            $stmt->bind_param("sss", $username, $password, $email);
-            if ($stmt->execute()) {
-                // FLAG　保存する
-                echo "<script>
-                        localStorage.setItem('registerSuccess', 'true');
-                        window.location.href = '../StoreRegister.php';
-                      </script>";
-                exit();
-            } else {
-                echo "insert ERROR";
             }
+            echo "<script>
+                    localStorage.setItem('registerSuccess', 'true');
+                    window.location.href = '../StoreRegister.php';
+                    </script>";
+            exit();
+        } else {
+            echo "insert ERROR";
         }
-        
+    
+
+// ------------------------------------end insert---------------------------------------
     $stmt->close();
     $conn->close();
 } else {

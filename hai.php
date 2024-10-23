@@ -1,3 +1,37 @@
+
+l
+ko cho sửa tên sname ở Edit
+mỗi lần tạo page mới phải include
+xóa cookie ở màn hình cửa hàng
+
+so sánh 2 password khi đăng ký
+
+sau khi đăng nhập->so sánh và tạo token lưu vao cookie, khi vào màn hình authcheck-> lấy dữ liệu vào session
+
+ubuntu:
+icacls haikey2.pem /inheritance:r
+icacls haikey2.pem /grant:r "${env:USERNAME}:(R)"
+
+scp -i "C:\Sites\ec2\haikey2.pem" -r "C:\Sites\we are" ubuntu@54.145.40.61:/var/www/html
+
+cd "C:\Sites\ec2\"
+
+ssh -i "haikey2.pem" ubuntu@54.145.40.61
+
+git pull origin main
+
+git clone https://github.com/haipham0209/we-are-bugs.git
+
+
+
+
+
+
+
+
+
+
+
 <section id="product-section" class="category">
     <?php foreach ($groupedProducts as $categoryId => $products): ?>
         <div class="group" id="category-<?php echo $categoryId; ?>">
@@ -14,6 +48,29 @@
         </div>
     <?php endforeach; ?>
 </section>
+
+<?php include 'products.php'; ?>
+
+<div class="product-container">
+    <?php foreach ($categories as $categoryName => $products): ?>
+        <div class="group" id="<?php echo $categoryName; ?>">
+            <h1 class="title"><?php echo ucfirst($categoryName); ?></h1>
+            <div class="product-showcase">
+                <?php foreach ($products as $product): ?>
+                    <div class="product-content">
+                        <img src="<?php echo $product['image']; ?>" alt="<?php echo $product['name']; ?>">
+                        <p class="rotated-text">
+                            <?php echo $product['name']; ?><br><?php echo $product['price']; ?> ¥
+                        </p>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+            <?php if (count($products) > 3): ?>
+                <button class="show-more-btn" data-group="<?php echo $categoryName; ?>">Show More</button>
+            <?php endif; ?>
+        </div>
+    <?php endforeach; ?>
+</div>
 
 
 <!-- ----------------------------------------------------------- -->
@@ -58,3 +115,7 @@
 <button class="show-more-btn">Show More</button>
 <h2 class="collection-title">Fall-Winter Collection</h2>
 </section>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.7/lottie.min.js"></script>

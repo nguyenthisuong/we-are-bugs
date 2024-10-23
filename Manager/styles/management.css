@@ -159,4 +159,37 @@ body {
         top: 10px;
         right: 10px;
     }
+
+    /* ------------------------------log out--------------------------------- */
+    /* Định dạng tổng thể cho phần chứa nút */
+.logout-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Kiểu dáng cho nút logout */
+.logout-button {
+    text-decoration: none;
+    background-color: #ff6b6b;
+    color: white;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+/* Hiệu ứng hover */
+.logout-button:hover {
+    background-color: #ff4c4c;
+    transform: scale(1.05);
+}
+
+/* Hiệu ứng khi nhấp vào */
+.logout-button:active {
+    background-color: #e63946;
+    transform: scale(0.95);
+}
+/* ---------------------------enfd logout--------------------------------- */
 }

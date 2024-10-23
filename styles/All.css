@@ -17,8 +17,9 @@
         margin-top: 80px;
     }
     footer{
-        padding: 100px;
-        background-color: #ccc;
+        margin: 5px;
+        padding: 0px;
+        /* background-color: #ccc; */
     }
     @keyframes wave {
         0% { background-position: 0% 50%; }
@@ -49,15 +50,14 @@
         /* animation: wave 10s ease infinite; Thêm hiệu ứng gợn sóng */
         border-bottom: solid 1.5px rgb(255, 255, 255);
         font-size: 25px;
-        height: 80px;
+        height: 70px;
         z-index: 100;
         top: 0;
         left: 0;
-    
         margin: 0;
         padding: 0;
         border-bottom-left-radius: 5px;
-border-bottom-right-radius: 5px;
+        border-bottom-right-radius: 5px;
 
     
     }
@@ -69,7 +69,7 @@ border-bottom-right-radius: 5px;
     
     .search-bar {
         width: 60%;
-        height: 25px;
+        height: 35px;
         padding: 5px;
         border-radius: 5px;
         border: 1px solid #ccc; 
@@ -83,7 +83,7 @@ border-bottom-right-radius: 5px;
     
     /* Ẩn menu theo mặc định */
     .nav-menu {
-        margin-top: 78px;
+        margin-top: 68px;
         position: fixed;
         /* top: 70px; */
         left: -100%;
@@ -96,18 +96,19 @@ border-bottom-right-radius: 5px;
         justify-content: flex-start;
         transition: left 0.3s ease;
         z-index: 1000;
-        border-radius: 15px;
+        border-radius: 5px 15px 15px 0; /* Bo góc bên phải trên và dưới */
     }
     
     /* Khi menu được mở */
     .nav-menu.open {
         left: 0;
+        margin-left: 0;
     }
     
     /* Danh sách menu */
     .nav-menu ul {
         margin-top: 50px;
-        margin-left: 25px;
+        margin-left: 10px;
         list-style: none;
         padding: 0;
         text-align: left;
@@ -155,6 +156,27 @@ border-bottom-right-radius: 5px;
     
     
     /* =============================END nav menu------------------------------ */
+        /* ---------------------------------nav button ------------------------------------- */
+        .menu-toggle {
+            background: none;
+            border: none;
+            font-size: 24px; /* Adjust size as needed */
+            cursor: pointer;
+        }
+        
+        .menu-icon {
+            display: inline-block;
+        }
+        
+        .menu-icon.open::before {
+            content: '✖'; /* X symbol */
+        }
+        
+        .menu-icon::before {
+            content: '☰'; /* Hamburger icon */
+        }
+        /* --------------------------------end nav button----------------------------------------- */
+    
     }
     /* Reset margin/padding */
     html {

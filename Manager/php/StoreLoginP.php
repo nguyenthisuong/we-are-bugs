@@ -30,8 +30,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $stmt->execute();
     $result = $stmt->get_result();
 
+    // 存在しない
     if ($result->num_rows === 0) {
-        // 存在しない
         header("Location: ../StoreLogin.php?error=username_not_found&username=" . urlencode($username));
         exit();
     } else {
@@ -40,6 +40,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         //user data 取得
         $stored_password = $user['password']; 
         $userid = $user["userid"];
+        $mail = $user["mail"]; // Lấy địa chỉ email từ cơ sở dữ liệu
+
 
         // password check
         if ($password === $stored_password) {
@@ -50,12 +52,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
              $stmt = $conn->prepare($update_token_sql);
              $stmt->bind_param("si", $token, $userid);
              $stmt->execute();
+
+                     // Truy vấn thông tin cửa hàng dựa trên userid
+            $store_sql = "SELECT * FROM store WHERE userid = ?";
+            $stmt = $conn->prepare($store_sql);
+            $stmt->bind_param("i", $userid);
+            $stmt->execute();
+            $store_result = $stmt->get_result();
+        // Lấy thông tin cửa hàng
+        if ($store_result->num_rows > 0) {
+            $store = $store_result->fetch_assoc();
+            $storeid = $store["storeid"];
+            // Lưu thông tin cửa hàng vào session
+            $_SESSION['storeid'] = $storeid; // Lưu storeid
+        }    
             // session 開始
+            session_destroy();
             session_start();
-            $_SESSION['userid'] = $userid; 
-            setcookie('username', $username, time() + (86400 * 30), "/"); //30day
-            setcookie('token', $token, time() + (86400 * 30), "/");
-            setcookie('loggedin', true, time() + (86400 * 30), "/");
+            setcookie('username', $username, time() + (864000 * 30), "/"); //30day
+            // setcookie('userid', $userid, time() + (864000 * 30), "/"); //30day
+            setcookie('token', $token, time() + (8640000 * 30), "/");
+            setcookie('loggedin', true, time() + (8640000 * 30), "/");
+//đã làm ở authcheck nên ko cần ở đaay
+            // $_SESSION['username'] = $username; // Lưu ID người dùng
+            // $_SESSION['userid'] = $userid; // Lưu ID người dùng
+            // $_SESSION['mail'] = $mail; // Lưu địa chỉ email
+            // $_SESSION['storeid'] = $storeid; // Lưu storeid
+            // $_SESSION['last_activity'] = time(); // Lưu thời gian hoạt động cuối cùng
             //page 移動
             header("Location: ../main.php");
             exit();

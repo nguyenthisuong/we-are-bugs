@@ -1,3 +1,68 @@
+<?php
+session_start();
+
+$servername = "localhost";
+$username = "dbuser"; // Thay đổi theo thông tin của bạn
+$password = "ecc"; // Thay đổi theo thông tin của bạn
+$dbname = "wearebugs"; // Thay đổi theo thông tin của bạn
+
+// Kết nối đến cơ sở dữ liệu
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Kiểm tra kết nối
+if ($conn->connect_error) {
+    echo "SERVER NOT FOUND";
+    exit();
+}
+
+// Kiểm tra xem có tham số sname trong URL không
+if (!isset($_GET['sname'])) {
+    // Trả về mã trạng thái 404
+    header("HTTP/1.0 404 Not Found");
+    echo "404 Not Found";
+    exit();
+}
+
+// Nếu có tham số sname, tiếp tục xử lý
+$storeName = $_GET['sname'];
+
+// Khởi tạo các biến để tránh lỗi chưa khai báo
+$tel = null;
+$address = null;
+$mail = null;
+$sname = null;
+
+// Thực hiện truy vấn để lấy dữ liệu cửa hàng và thông tin người dùng
+$query = "SELECT store.sname, store.tel, store.address, user.mail FROM store 
+          JOIN user ON store.userid = user.userid 
+          WHERE store.sname = ?";
+
+$stmt = $conn->prepare($query);
+$stmt->bind_param("s", $storeName); // Ràng buộc tham số
+$stmt->execute();
+$result = $stmt->get_result(); // Lấy kết quả truy vấn
+
+// Kiểm tra nếu có dữ liệu cửa hàng
+if ($result->num_rows > 0) {
+    $storeData = $result->fetch_assoc(); // Lấy dữ liệu dưới dạng mảng kết hợp
+    // Hiển thị dữ liệu cửa hàng
+    $sname = $storeData["sname"];
+    $tel = $storeData["tel"];
+    $address = $storeData["address"];
+    $mail = $storeData["mail"]; // Lấy email từ bảng user
+} else {
+    // Xử lý khi không tìm thấy cửa hàng
+    header("HTTP/1.0 404 Not Found");
+    exit();
+}
+
+// Đóng kết nối
+$stmt->close();
+$conn->close();
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -12,22 +77,27 @@
 <body>
     <header>
         <!-- Navbar -->
-    <div class="navbar">
-        <div class="menu-icon">☰</div>
-        <input type="text" class="search-bar" placeholder="Search...">
-        <h1 class="logo">WRB</h1>
-    </div>
+        <div class="navbar">
+    <button class="menu-toggle" aria-label="Toggle navigation">
+        <span class="menu-icon"></span>
+    </button>
+    <input type="text" class="search-bar" placeholder="Search...">
+    <h1 class="logo">WRB</h1>
+</div>
+
     <nav class="nav-menu">
         <ul>
-          <li><a href="main.php">ホームページ</a></li>
-          <li><a href="#">商品</a></li>
-          <li><a href="#">お店について</a></li>
+        <li><h3><?php echo $sname; ?></h3></li>
+          <li><a href="./main.php?sname=<?php echo $_GET['sname']  ?>">ホームページ</a></li>
+          <li><a href="./html/product.php">商品</a></li>
+          <li><a href="./html/storeInfor.php">お店について</a></li>
           <li><a href="#">会員登録</a></li>
           <li><a href="#">ログイン</a></li>
           <li class="support-title">サポート</li>
-          <li class="support"><i class="fa fa-phone"></i><a class="support" href="tel">+81000000000000</a></li>
-          <li class="support"><i class="fa fa-envelope"></i><a class="support" href="mail:">srb@ecc.ac.jp</a></li>
-          <li class="support"><i class="fa fa-map-marker"></i><a target="blank" class="support" href=""></a></li>
+          <li class="support"><i class="fa fa-phone"></i><a class="support" href="tel:<?php echo $tel; ?>"><?php echo $tel; ?></a></li>
+
+          <li class="support"><i class="fa fa-envelope"></i><a class="support" href="mail:"><?php echo $mail; ?></a></li>
+          <li class="support"><i class="fa fa-map-marker"></i><a target="blank" class="support" href=""><?php echo $address; ?></a></li>
          </ul>
     </nav>
        <div class="overlay"></div>
@@ -74,6 +144,26 @@
     <div class="group" id="men">
         <h1 class="title">Men</h1>
         <div class="product-showcase">
+            <div class="product-content">
+                <img src="./images/product/1.jpg" alt="White Dress" />
+                <p class="rotated-text">White Dress<br>8000 ¥</p>
+            </div>
+            <div class="product-content">
+                <img src="./images/product/2.jpg" alt="Black Suit" />
+                <p class="rotated-text">Black Suit<br>12000 ¥</p>
+            </div>
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Blue Shirt" />
+                <p class="rotated-text">Blue Shirt<br>5000 ¥</p>
+            </div>
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Jacket" />
+                <p class="rotated-text">Jacket<br>15000 ¥</p>
+            </div>
+            <div class="product-content">
+                <img src="./images/facebook.png" alt="Jeans" />
+                <p class="rotated-text">Jeans<br>6000 ¥</p>
+            </div>
             <div class="product-content">
                 <img src="./images/facebook.png" alt="White Dress" />
                 <p class="rotated-text">White Dress<br>8000 ¥</p>
@@ -141,10 +231,6 @@
             <div class="product-content">
                 <img src="./images/facebook.png" alt="Cap" />
                 <p class="rotated-text">Cap<br>2000 ¥</p>
-            </div>
-            <div class="product-content ">
-                <img src="./images/facebook.png" alt="Shoes" />
-                <p class="rotated-text">Shoes<br>5000 ¥</p>
             </div>
         </div>
         <button class="show-more-btn" data-group="child">Show More</button>

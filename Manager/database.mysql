@@ -13,4 +13,39 @@ CREATE TABLE user (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE store (
+    storeid INT AUTO_INCREMENT PRIMARY KEY,
+    userid INT NOT NULL,
+    sname VARCHAR(100) NOT NULL,
+    address VARCHAR(255), 
+    tel VARCHAR(20), 
+    description TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    CONSTRAINT fk_user FOREIGN KEY (userid) REFERENCES user(userid) 
+    ON DELETE CASCADE 
+);
+
+CREATE TABLE product (
+    productid INT PRIMARY KEY AUTO_INCREMENT,
+    storeid INT,
+    category_id INT,
+    pname VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    costPrice DECIMAL(10, 2) NOT NULL,
+    description TEXT,
+    stock_quantity INT NOT NULL,
+    barcode VARCHAR(13) UNIQUE NOT NULL,
+    FOREIGN KEY (storeid) REFERENCES store(storeid),
+    FOREIGN KEY (category_id) REFERENCES category(category_id)
+);
+
+
+CREATE TABLE category (
+    category_id INT PRIMARY KEY AUTO_INCREMENT,
+    cname VARCHAR(100) NOT NULL
+);
+
+
+
+
 GRANT ALL PRIVILEGES ON wearebugs.* TO 'dbuser'@'localhost';

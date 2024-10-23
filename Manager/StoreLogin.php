@@ -1,12 +1,17 @@
 <?php
-
+//xóa coookie khi trang login dc khởi động
 if (isset($_COOKIE['username'])) {
     setcookie('username', '', time() - 86400, "/");
 }
 if (isset($_COOKIE['token'])) {
     setcookie('token', '', time() - 86400, "/");
 }
-
+if (isset($_COOKIE['userid'])) {
+    setcookie('userid', '', time() - 86400, "/");
+}
+if (isset($_COOKIE['loggedin'])) {
+    setcookie('loggedin', '', time() - 86400, "/");
+}
 ?>
 <!DOCTYPE html>
 <html lang="ja">
